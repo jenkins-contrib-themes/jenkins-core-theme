@@ -1,3 +1,4 @@
+@import "variables";
 @import "functions";
 
 /* Src */
@@ -79,8 +80,11 @@
   }
 }
 
-.icon-notepad {
+.icon-notepad, [src$='notepad.png'] {
   .icon-img('../images/history.svg', @color-grey);
+  &[width="24"] {
+    .icon(@size-md);
+  }
 }
 
 .icon-setting, [src$='setting.png'] {
@@ -124,7 +128,7 @@
   }
 }
 
-.icon-secure, [src$='secure.png'] {
+.icon-secure, .icon-lock, [src$='secure.png'] {
   .icon-img('../images/lock.svg', @color-grey);
   &[width="24"] {
     .icon(@size-md);
@@ -250,9 +254,9 @@
   }
 }
 
-[src$='notepad.png'] {
-  .icon-img('../images/history.svg', @color-grey);
-  &[width="24"] {
+[src$='confighistory.png'] {
+  .icon-img('../images/build.svg', @color-grey);
+  &[style^="width: 24px"] {
     .icon(@size-md);
   }
 }
