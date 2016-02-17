@@ -41,6 +41,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Document\CreateDocumentInteractor.cs" />
+    <Compile Include="Document\CreateDocumentRequest.cs" />
+    <Compile Include="Document\CreateDocumentResponse.cs" />
+    <Compile Include="IRequestHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
