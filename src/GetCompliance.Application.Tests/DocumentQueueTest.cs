@@ -1,17 +1,14 @@
-﻿using System;
-using System.Diagnostics;
-using GetCompliance.Application.OnPremise;
-using GetCompliance.Application.Queue;
+﻿using GetCompliance.Application.Queue;
 using NUnit.Framework;
 
-namespace GetCompliance.Application.Tests.OnPremise
+namespace GetCompliance.Application.Tests
 {
-    public class OnPremiseQueueTest
+    public class DocumentQueueTest
     {
-        private readonly OnPremiseQueue _sut;
-        public OnPremiseQueueTest()
+        private readonly DocumentQueue _sut;
+        public DocumentQueueTest()
         {
-            _sut = new OnPremiseQueue();
+            _sut = new DocumentQueue();
         }
         [Test]
         public void PutMessageTest()

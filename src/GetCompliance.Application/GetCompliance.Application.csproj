@@ -31,6 +31,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="RabbitMQ.Client, Version=3.6.0.0, Culture=neutral, PublicKeyToken=89e7d7c5feba84ce, processorArchitecture=MSIL">
+      <HintPath>..\packages\RabbitMQ.Client.3.6.0\lib\net45\RabbitMQ.Client.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -44,6 +48,7 @@
     <Compile Include="Document\CreateDocumentInteractor.cs" />
     <Compile Include="Document\CreateDocumentRequest.cs" />
     <Compile Include="Document\CreateDocumentResponse.cs" />
+    <Compile Include="Queue\DocumentQueue.cs" />
     <Compile Include="Queue\IQueue.cs" />
     <Compile Include="Queue\Message.cs" />
     <Compile Include="Queue\Queue.cs" />
@@ -59,6 +64,9 @@
       <Project>{89918CC0-34C0-47C3-852E-DC58A5DE42A1}</Project>
       <Name>GetCompliance.Infra.Data</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

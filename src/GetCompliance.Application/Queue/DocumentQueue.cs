@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Text;
-using GetCompliance.Application.Queue;
 using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
 
-namespace GetCompliance.Application.OnPremise
+namespace GetCompliance.Application.Queue
 {
-    public class OnPremiseQueue : IQueue
+    public class DocumentQueue : IQueue
     {
         public void PutMessage(Message message)
         {
