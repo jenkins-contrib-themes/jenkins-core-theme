@@ -35,6 +35,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GetCompliance.Application.C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GetCompliance.Application.OnPremise", "GetCompliance.Application.OnPremise\GetCompliance.Application.OnPremise.csproj", "{CE7EC7F5-0929-490A-A7BB-D592FA37648E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GetCompliance.Presentation.UI", "GetCompliance.Presentation.UI\GetCompliance.Presentation.UI.csproj", "{5F8DAD2C-27C6-4857-B742-BA7E095091F1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -77,6 +79,10 @@ Global
 		{CE7EC7F5-0929-490A-A7BB-D592FA37648E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CE7EC7F5-0929-490A-A7BB-D592FA37648E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CE7EC7F5-0929-490A-A7BB-D592FA37648E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F8DAD2C-27C6-4857-B742-BA7E095091F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F8DAD2C-27C6-4857-B742-BA7E095091F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F8DAD2C-27C6-4857-B742-BA7E095091F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F8DAD2C-27C6-4857-B742-BA7E095091F1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -93,5 +99,6 @@ Global
 		{E02C695E-6FEC-4A4F-9519-95F5AF1B1814} = {77CA314A-647F-4AEF-9282-239C717A5970}
 		{623169C2-B8A1-40F6-A6AE-2497E6DD0122} = {DA328FFC-5132-4C07-9BE9-E58C742C48F9}
 		{CE7EC7F5-0929-490A-A7BB-D592FA37648E} = {DA328FFC-5132-4C07-9BE9-E58C742C48F9}
+		{5F8DAD2C-27C6-4857-B742-BA7E095091F1} = {36C8EACC-C740-4549-BAFC-EFDB8F814BAF}
 	EndGlobalSection
 EndGlobal
