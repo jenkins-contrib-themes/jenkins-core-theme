@@ -54,10 +54,26 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Cloud\AzureQueueTest.cs" />
+    <Compile Include="OnPremise\OnPremiseQueueTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GetCompliance.Application.Cloud\GetCompliance.Application.Cloud.csproj">
+      <Project>{623169C2-B8A1-40F6-A6AE-2497E6DD0122}</Project>
+      <Name>GetCompliance.Application.Cloud</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GetCompliance.Application.OnPremise\GetCompliance.Application.OnPremise.csproj">
+      <Project>{CE7EC7F5-0929-490A-A7BB-D592FA37648E}</Project>
+      <Name>GetCompliance.Application.OnPremise</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GetCompliance.Application\GetCompliance.Application.csproj">
+      <Project>{7d68e77b-0a75-4bac-98e9-05e69b3b6196}</Project>
+      <Name>GetCompliance.Application</Name>
+    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

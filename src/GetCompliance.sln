@@ -31,6 +31,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GetCompliance.Application.T
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GetCompliance.Services.API", "GetCompliance.Services.API\GetCompliance.Services.API.csproj", "{E02C695E-6FEC-4A4F-9519-95F5AF1B1814}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GetCompliance.Application.Cloud", "GetCompliance.Application.Cloud\GetCompliance.Application.Cloud.csproj", "{623169C2-B8A1-40F6-A6AE-2497E6DD0122}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GetCompliance.Application.OnPremise", "GetCompliance.Application.OnPremise\GetCompliance.Application.OnPremise.csproj", "{CE7EC7F5-0929-490A-A7BB-D592FA37648E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -65,6 +69,14 @@ Global
 		{E02C695E-6FEC-4A4F-9519-95F5AF1B1814}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E02C695E-6FEC-4A4F-9519-95F5AF1B1814}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E02C695E-6FEC-4A4F-9519-95F5AF1B1814}.Release|Any CPU.Build.0 = Release|Any CPU
+		{623169C2-B8A1-40F6-A6AE-2497E6DD0122}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{623169C2-B8A1-40F6-A6AE-2497E6DD0122}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{623169C2-B8A1-40F6-A6AE-2497E6DD0122}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{623169C2-B8A1-40F6-A6AE-2497E6DD0122}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE7EC7F5-0929-490A-A7BB-D592FA37648E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE7EC7F5-0929-490A-A7BB-D592FA37648E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE7EC7F5-0929-490A-A7BB-D592FA37648E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE7EC7F5-0929-490A-A7BB-D592FA37648E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -79,5 +91,7 @@ Global
 		{7D68E77B-0A75-4BAC-98E9-05E69B3B6196} = {DA328FFC-5132-4C07-9BE9-E58C742C48F9}
 		{EE6F4F37-4888-4A5F-9CB2-1EE517B595EA} = {DA328FFC-5132-4C07-9BE9-E58C742C48F9}
 		{E02C695E-6FEC-4A4F-9519-95F5AF1B1814} = {77CA314A-647F-4AEF-9282-239C717A5970}
+		{623169C2-B8A1-40F6-A6AE-2497E6DD0122} = {DA328FFC-5132-4C07-9BE9-E58C742C48F9}
+		{CE7EC7F5-0929-490A-A7BB-D592FA37648E} = {DA328FFC-5132-4C07-9BE9-E58C742C48F9}
 	EndGlobalSection
 EndGlobal

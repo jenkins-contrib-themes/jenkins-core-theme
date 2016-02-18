@@ -4,14 +4,13 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{7D68E77B-0A75-4BAC-98E9-05E69B3B6196}</ProjectGuid>
+    <ProjectGuid>{623169C2-B8A1-40F6-A6AE-2497E6DD0122}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>GetCompliance.Application</RootNamespace>
-    <AssemblyName>GetCompliance.Application</AssemblyName>
+    <RootNamespace>GetCompliance.Application.Cloud</RootNamespace>
+    <AssemblyName>GetCompliance.Application.Cloud</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -31,6 +30,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="RestSharp, Version=105.2.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.105.2.3\lib\net46\RestSharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -41,24 +44,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Document\CreateDocumentInteractor.cs" />
-    <Compile Include="Document\CreateDocumentRequest.cs" />
-    <Compile Include="Document\CreateDocumentResponse.cs" />
-    <Compile Include="Queue\IQueue.cs" />
-    <Compile Include="Queue\Message.cs" />
-    <Compile Include="Queue\Queue.cs" />
-    <Compile Include="IRequestHandler.cs" />
+    <Compile Include="AzureQueue.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\GetCompliance.Domain\GetCompliance.Domain.csproj">
-      <Project>{EF05A591-BAB3-495B-B42D-496D8FC13BD9}</Project>
-      <Name>GetCompliance.Domain</Name>
+    <ProjectReference Include="..\GetCompliance.Application\GetCompliance.Application.csproj">
+      <Project>{7D68E77B-0A75-4BAC-98E9-05E69B3B6196}</Project>
+      <Name>GetCompliance.Application</Name>
     </ProjectReference>
-    <ProjectReference Include="..\GetCompliance.Infra.Data\GetCompliance.Infra.Data.csproj">
-      <Project>{89918CC0-34C0-47C3-852E-DC58A5DE42A1}</Project>
-      <Name>GetCompliance.Infra.Data</Name>
-    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
