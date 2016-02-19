@@ -33,6 +33,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GetCompliance.Services.API"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GetCompliance.Presentation.UI", "GetCompliance.Presentation.UI\GetCompliance.Presentation.UI.csproj", "{5F8DAD2C-27C6-4857-B742-BA7E095091F1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "S22.Mail", "S22.Mail\S22.Mail.csproj", "{CA72A1AA-6F1A-4D5F-B98B-FD73F5407563}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -71,6 +73,10 @@ Global
 		{5F8DAD2C-27C6-4857-B742-BA7E095091F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5F8DAD2C-27C6-4857-B742-BA7E095091F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5F8DAD2C-27C6-4857-B742-BA7E095091F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA72A1AA-6F1A-4D5F-B98B-FD73F5407563}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA72A1AA-6F1A-4D5F-B98B-FD73F5407563}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA72A1AA-6F1A-4D5F-B98B-FD73F5407563}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA72A1AA-6F1A-4D5F-B98B-FD73F5407563}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -86,5 +92,6 @@ Global
 		{EE6F4F37-4888-4A5F-9CB2-1EE517B595EA} = {DA328FFC-5132-4C07-9BE9-E58C742C48F9}
 		{E02C695E-6FEC-4A4F-9519-95F5AF1B1814} = {77CA314A-647F-4AEF-9282-239C717A5970}
 		{5F8DAD2C-27C6-4857-B742-BA7E095091F1} = {36C8EACC-C740-4549-BAFC-EFDB8F814BAF}
+		{CA72A1AA-6F1A-4D5F-B98B-FD73F5407563} = {DA328FFC-5132-4C07-9BE9-E58C742C48F9}
 	EndGlobalSection
 EndGlobal

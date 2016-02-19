@@ -1,0 +1,77 @@
+Delivered-To: rodrigo.rodrigues@gastecnologia.com.br
+Received: by 10.159.37.200 with SMTP id 66csp657934uaf;
+        Thu, 18 Feb 2016 15:55:19 -0800 (PST)
+X-Received: by 10.60.134.15 with SMTP id pg15mr9296386oeb.23.1455839719900;
+        Thu, 18 Feb 2016 15:55:19 -0800 (PST)
+Return-Path: <r.feijolo@gmail.com>
+Received: from mail-oi0-x234.google.com (mail-oi0-x234.google.com. [2607:f8b0:4003:c06::234])
+        by mx.google.com with ESMTPS id k81si12748688oif.147.2016.02.18.15.55.19
+        for <rodrigo.rodrigues@gastecnologia.com.br>
+        (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+        Thu, 18 Feb 2016 15:55:19 -0800 (PST)
+Received-SPF: pass (google.com: domain of r.feijolo@gmail.com designates 2607:f8b0:4003:c06::234 as permitted sender) client-ip=2607:f8b0:4003:c06::234;
+Authentication-Results: mx.google.com;
+       spf=pass (google.com: domain of r.feijolo@gmail.com designates 2607:f8b0:4003:c06::234 as permitted sender) smtp.mailfrom=r.feijolo@gmail.com;
+       dkim=pass header.i=@gmail.com;
+       dmarc=pass (p=NONE dis=NONE) header.from=gmail.com
+Received: by mail-oi0-x234.google.com with SMTP id w5so1371365oie.3
+        for <rodrigo.rodrigues@gastecnologia.com.br>; Thu, 18 Feb 2016 15:55:19 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20120113;
+        h=mime-version:date:message-id:subject:from:to:content-type;
+        bh=tOanRSk8qvDF1XzcnT7TVlZw3fDj/FWy8rJepJssXNE=;
+        b=YwL8zl+83hE0AtG11bGkwdLb3EmRpGqJz1Py0bDiy7z2HDVR/rBScOJ9HSZj/j+DrP
+         jQ0oNYUbVJ0Ru+SKveEZvL09xxEjNvsrv7IMJLFv278p1pvpI8Emr4sne6DqBjakE6gY
+         F81VHqHq+2f5xIwUIAeHyfAvbTDWyLgtcbMJmj0GEex3S/5R74UK7E4XdcEJgqSv4iOq
+         V+i/q221Mzxtu0leoJHhDOG0XgqilweGXc9uxJxIuMRR0g6PI/9IF/5G3PMRTDVfbHbR
+         oyGWJV1qvQbRrIpW2Qcp5OorOJuiGiDk9GoyHHaWnuPo0aV6cl+szRoYDU8ZpsUnqla9
+         iIAw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20130820;
+        h=x-gm-message-state:mime-version:date:message-id:subject:from:to
+         :content-type;
+        bh=tOanRSk8qvDF1XzcnT7TVlZw3fDj/FWy8rJepJssXNE=;
+        b=DjpfMf48c8MkwKFc1KqO9BC16m3qoI9rgESgXESxrEFrMH3VNUzbRZjX11T28YVHSq
+         SuXTBmyvutDsxAnUPdal0HKJHdiNfArHTzkhfETfaBozJDC8o7RTU1EuFLOfbkrudJip
+         9J1BwDLtFlxXuztQMrFDr4d/xhPnsv2+6ARJgmQrU8zuBABk3X44876bnYWKazzAG2VN
+         1jZlqnUp/q1Q882d732qJj3f8Z0NZWorFXWVGC4E1xJ6PPYMRlyhL/8Ago3roq4vQJZW
+         nWLzYazLIyMpnMaA/E8HEre+NKV2mjMu2ZJizYGqD2mU+SKwSj1+IL2ZxZ1m0dz2736J
+         5Vtw==
+X-Gm-Message-State: AG10YOS88CfDEh+6zOYZRxjDOukqpkvERTgvEL3jYWKinygKeVZh+4QbWQxtebX5Xg58gBpuGeNy1R5vdoo+Ow==
+MIME-Version: 1.0
+X-Received: by 10.202.95.68 with SMTP id t65mr8164362oib.7.1455839719611; Thu,
+ 18 Feb 2016 15:55:19 -0800 (PST)
+Received: by 10.76.180.102 with HTTP; Thu, 18 Feb 2016 15:55:19 -0800 (PST)
+Date: Thu, 18 Feb 2016 21:55:19 -0200
+Message-ID: <CAKmJ1RMaK3jRKn01t=0miaVx7AtmnnrH=ThJ3ojM7VLu1A7s=w@mail.gmail.com>
+Subject: Teste
+From: Rodrigo Feijolo <r.feijolo@gmail.com>
+To: rodrigo.rodrigues@gastecnologia.com.br
+Content-Type: multipart/mixed; boundary=001a113cdb1456888f052c14195a
+
+--001a113cdb1456888f052c14195a
+Content-Type: multipart/alternative; boundary=001a113cdb14568887052c141958
+
+--001a113cdb14568887052c141958
+Content-Type: text/plain; charset=UTF-8
+
+Teste
+
+-- 
+*Rodrigo Aiala Feijolo Rodrigues*
+
+--001a113cdb14568887052c141958
+Content-Type: text/html; charset=UTF-8
+
+<div dir="ltr">Teste<br clear="all"><div><br></div>-- <br><div class="gmail_signature"><b style="background-color:rgb(255,255,255)">Rodrigo Aiala Feijolo Rodrigues</b></div>
+</div>
+
+--001a113cdb14568887052c141958--
+--001a113cdb1456888f052c14195a
+Content-Type: text/plain; charset=US-ASCII; name="attachment.txt"
+Content-Disposition: attachment; filename="attachment.txt"
+Content-Transfer-Encoding: base64
+X-Attachment-Id: f_iksxcpqu0
+
+IkF0dGFjaG1lbnQgdGVzdCIgDQo=
+--001a113cdb1456888f052c14195a--

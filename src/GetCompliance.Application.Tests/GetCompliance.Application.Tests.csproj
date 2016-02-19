@@ -35,6 +35,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MsgReader, Version=1.9.11.0, Culture=neutral, PublicKeyToken=47f99f3a9a2648df, processorArchitecture=MSIL">
+      <HintPath>..\packages\MSGReader.1.9.11\lib\MsgReader.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="nunit.framework, Version=3.0.5813.39031, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
       <HintPath>..\packages\NUnit.3.0.1\lib\net45\nunit.framework.dll</HintPath>
       <Private>True</Private>
@@ -54,16 +58,34 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="DocumentParserFactory.cs" />
+    <Compile Include="DocumentParserFactoryTest.cs" />
     <Compile Include="DocumentQueueTest.cs" />
+    <Compile Include="EmlParser.cs" />
+    <Compile Include="EmlParserTest.cs" />
+    <Compile Include="IDocumentParser.cs" />
+    <Compile Include="MailMessageExtensions.cs" />
+    <Compile Include="NullParser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\test.eml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\GetCompliance.Application\GetCompliance.Application.csproj">
       <Project>{7d68e77b-0a75-4bac-98e9-05e69b3b6196}</Project>
       <Name>GetCompliance.Application</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GetCompliance.Domain\GetCompliance.Domain.csproj">
+      <Project>{EF05A591-BAB3-495B-B42D-496D8FC13BD9}</Project>
+      <Name>GetCompliance.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\S22.Mail\S22.Mail.csproj">
+      <Project>{ca72a1aa-6f1a-4d5f-b98b-fd73f5407563}</Project>
+      <Name>S22.Mail</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>

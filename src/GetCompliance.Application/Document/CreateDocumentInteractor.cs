@@ -1,5 +1,4 @@
-﻿using System.Net.Http;
-using GetCompliance.Application.Queue;
+﻿using GetCompliance.Application.Queue;
 using GetCompliance.Infra.Data.Interfaces;
 
 namespace GetCompliance.Application.Document
@@ -17,7 +16,6 @@ namespace GetCompliance.Application.Document
 
         public CreateDocumentResponse Handle(CreateDocumentRequest request)
         {
-            
             return new CreateDocumentResponse();
         }
     }

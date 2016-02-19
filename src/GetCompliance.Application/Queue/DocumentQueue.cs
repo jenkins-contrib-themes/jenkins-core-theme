@@ -62,8 +62,7 @@ namespace GetCompliance.Application.Queue
 
         private void OnConsumerOnReceived(object model, BasicDeliverEventArgs ea)
         {
-            var body = ea.Body;
-            var message = Encoding.UTF8.GetString(body);
+            var message = Encoding.UTF8.GetString(ea.Body);
             Trace.Write("[x] Received {0}", message);
         }
     }
