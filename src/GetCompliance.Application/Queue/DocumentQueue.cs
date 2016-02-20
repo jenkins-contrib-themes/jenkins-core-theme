@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
+using System.Net;
 using System.Text;
 using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
@@ -14,8 +15,10 @@ namespace GetCompliance.Application.Queue
             using (var connection = factory.CreateConnection())
             using (var channel = connection.CreateModel())
             {
-                channel.QueueDeclare(queue: "hello",
-                                     durable: false,
+                var properties = channel.CreateBasicProperties();
+                properties.Persistent = true;
+                channel.QueueDeclare(queue: "parse_document",
+                                     durable: true,
                                      exclusive: false,
                                      autoDelete: false,
                                      arguments: null);
@@ -38,17 +41,26 @@ namespace GetCompliance.Application.Queue
             using (var connection = factory.CreateConnection())
             using (var channel = connection.CreateModel())
             {
-                channel.QueueDeclare(queue: "hello",
-                                     durable: false,
+                var properties = channel.CreateBasicProperties();
+                properties.Persistent = true;
+                channel.QueueDeclare(queue: "parse_document",
+                                     durable: true,
                                      exclusive: false,
                                      autoDelete: false,
                                      arguments: null);
 
                 var consumer = new EventingBasicConsumer(channel);
-                consumer.Received += OnConsumerOnReceived;
+                consumer.Received += (model, ea) =>
+                {
+
+                    var message = Encoding.UTF8.GetString(ea.Body);
+                    Trace.Write("[x] Received {0}", message);
+                    // ReSharper disable once AccessToDisposedClosure
+                    channel.BasicAck(deliveryTag: ea.DeliveryTag, multiple: false);
+                };
                 consumer.Registered += ConsumerOnRegistered;
                 channel.BasicConsume(queue: "hello",
-                                     noAck: true,
+                                     noAck: false,
                                      consumer: consumer);
             }
 
@@ -60,10 +72,5 @@ namespace GetCompliance.Application.Queue
             Trace.Write("Registered");
         }
 
-        private void OnConsumerOnReceived(object model, BasicDeliverEventArgs ea)
-        {
-            var message = Encoding.UTF8.GetString(ea.Body);
-            Trace.Write("[x] Received {0}", message);
-        }
     }
 }
