@@ -11,12 +11,10 @@ namespace GetCompliance.Application.Tests
         public void ParseTest()
         {
             var sut = new EmlParser();
-            Domain.Document result;
-            var emlPath = Path.Combine(TestContext.CurrentContext.TestDirectory, "Assets", "test.eml");
-            using (var messageAsStream = new FileStream(emlPath, FileMode.Open))
-            {
-                result = sut.Parse(messageAsStream);
-            }
+            var stream = new FileInfo(Assets.EmlTestFilePath);
+
+            var result = sut.Parse(stream.OpenRead());
+
             Assert.AreEqual("rodrigo.rodrigues@gastecnologia.com.br", result.To.First());
         }
     }

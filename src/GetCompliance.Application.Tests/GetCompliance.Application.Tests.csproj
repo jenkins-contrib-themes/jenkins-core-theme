@@ -58,8 +58,11 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Assets.cs" />
     <Compile Include="DocumentParserFactoryTest.cs" />
     <Compile Include="DocumentQueueTest.cs" />
+    <Compile Include="Document\CreateDocumentInteractorTest.cs" />
+    <Compile Include="Document\FakeQueue.cs" />
     <Compile Include="EmlParserTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -82,6 +85,9 @@
       <Project>{ca72a1aa-6f1a-4d5f-b98b-fd73f5407563}</Project>
       <Name>S22.Mail</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Queue\" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
