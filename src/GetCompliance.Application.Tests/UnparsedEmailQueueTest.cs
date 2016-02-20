@@ -21,8 +21,26 @@ namespace GetCompliance.Application.Tests
                 File = emlFile.OpenRead(),
                 Filename = emlFile.Name
             };
-            _sut.PutMessage(message);
-            
+
+            //_sut.PutMessage(message);
+        }
+    }
+
+    public class UnparsedEmailMessageTest
+    {
+        [Test]
+        public void ConvertToByteTest()
+        {
+            var emlFile = new FileInfo(Assets.EmlTestFilePath);
+            var message = new UnparsedEmailMessage
+            {
+                File = emlFile.OpenRead(),
+                Filename = emlFile.Name
+            };
+
+            var result = message.ToBytes();
+
+            Assert.Greater(0, result.Length);
         }
     }
 }

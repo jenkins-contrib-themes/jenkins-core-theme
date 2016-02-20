@@ -6,5 +6,11 @@ namespace GetCompliance.Application.Queue
     {
         public string Filename { get; set; }
         public Stream File { get; set; }
+
+        public byte[] ToBytes()
+        {
+
+            return new byte[0];
+        }
     }
 }

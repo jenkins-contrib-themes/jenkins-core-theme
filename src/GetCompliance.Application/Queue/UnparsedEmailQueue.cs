@@ -17,7 +17,7 @@ namespace GetCompliance.Application.Queue
             {
                 var properties = channel.CreateBasicProperties();
                 properties.Persistent = true;
-                channel.QueueDeclare(queue: "parse_document",
+                channel.QueueDeclare(queue: "unparsed_emails",
                                      durable: true,
                                      exclusive: false,
                                      autoDelete: false,
@@ -43,7 +43,7 @@ namespace GetCompliance.Application.Queue
             {
                 var properties = channel.CreateBasicProperties();
                 properties.Persistent = true;
-                channel.QueueDeclare(queue: "parse_document",
+                channel.QueueDeclare(queue: "unparsed_emails",
                                      durable: true,
                                      exclusive: false,
                                      autoDelete: false,
@@ -59,7 +59,7 @@ namespace GetCompliance.Application.Queue
                     channel.BasicAck(deliveryTag: ea.DeliveryTag, multiple: false);
                 };
                 consumer.Registered += ConsumerOnRegistered;
-                channel.BasicConsume(queue: "hello",
+                channel.BasicConsume(queue: "unparsed_emails",
                                      noAck: false,
                                      consumer: consumer);
             }
