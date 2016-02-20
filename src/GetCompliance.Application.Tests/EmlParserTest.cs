@@ -1,5 +1,6 @@
 using System.IO;
 using System.Linq;
+using GetCompliance.Application.DocumentParser;
 using NUnit.Framework;
 
 namespace GetCompliance.Application.Tests

@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using GetCompliance.Application.DocumentParser;
+using NUnit.Framework;
 
 namespace GetCompliance.Application.Tests
 {

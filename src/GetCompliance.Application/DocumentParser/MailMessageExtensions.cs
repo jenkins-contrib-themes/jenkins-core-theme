@@ -1,7 +1,7 @@
 using System.Linq;
 using System.Net.Mail;
 
-namespace GetCompliance.Application.Tests
+namespace GetCompliance.Application.DocumentParser
 {
     public static class MailMessageExtensions
     {

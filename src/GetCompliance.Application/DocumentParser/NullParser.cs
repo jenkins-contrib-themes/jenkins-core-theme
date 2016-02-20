@@ -1,6 +1,6 @@
 using System.IO;
 
-namespace GetCompliance.Application.Tests
+namespace GetCompliance.Application.DocumentParser
 {
     public class NullParser : IDocumentParser
     {

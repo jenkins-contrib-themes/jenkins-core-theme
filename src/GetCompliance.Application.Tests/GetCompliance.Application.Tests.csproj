@@ -58,14 +58,9 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="DocumentParserFactory.cs" />
     <Compile Include="DocumentParserFactoryTest.cs" />
     <Compile Include="DocumentQueueTest.cs" />
-    <Compile Include="EmlParser.cs" />
     <Compile Include="EmlParserTest.cs" />
-    <Compile Include="IDocumentParser.cs" />
-    <Compile Include="MailMessageExtensions.cs" />
-    <Compile Include="NullParser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
