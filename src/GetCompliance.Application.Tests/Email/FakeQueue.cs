@@ -5,13 +5,13 @@ namespace GetCompliance.Application.Tests.Email
 {
     public class FakeQueue : IQueue
     {
-        readonly Queue<Message> _queue = new Queue<Message>();
-        public void PutMessage(Message message)
+        readonly Queue<UnparsedEmailMessage> _queue = new Queue<UnparsedEmailMessage>();
+        public void PutMessage(UnparsedEmailMessage unparsedEmailMessage)
         {
-            _queue.Enqueue(message);
+            _queue.Enqueue(unparsedEmailMessage);
         }
 
-        public Message GetMessage()
+        public UnparsedEmailMessage GetMessage()
         {
             return _queue.Dequeue();
         }

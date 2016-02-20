@@ -55,7 +55,7 @@
     <Compile Include="Email\CreateEmailResponse.cs" />
     <Compile Include="Queue\UnparsedEmailQueue.cs" />
     <Compile Include="Queue\IQueue.cs" />
-    <Compile Include="Queue\Message.cs" />
+    <Compile Include="Queue\UnparsedEmailMessage.cs" />
     <Compile Include="Queue\Queue.cs" />
     <Compile Include="IRequestHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

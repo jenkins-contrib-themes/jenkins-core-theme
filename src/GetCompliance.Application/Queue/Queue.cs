@@ -2,12 +2,12 @@ namespace GetCompliance.Application.Queue
 {
     public abstract class Queue : IQueue
     { 
-        public void PutMessage(Message message)
+        public void PutMessage(UnparsedEmailMessage unparsedEmailMessage)
         {
             throw new System.NotImplementedException();
         }
 
-        public Message GetMessage()
+        public UnparsedEmailMessage GetMessage()
         {
             throw new System.NotImplementedException();
         }

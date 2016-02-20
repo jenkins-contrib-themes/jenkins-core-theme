@@ -9,7 +9,7 @@ namespace GetCompliance.Application.Queue
 {
     public class UnparsedEmailQueue : IQueue
     {
-        public void PutMessage(Message message)
+        public void PutMessage(UnparsedEmailMessage unparsedEmailMessage)
         {
             var factory = new ConnectionFactory() { HostName = "localhost" };
             using (var connection = factory.CreateConnection())
@@ -35,7 +35,7 @@ namespace GetCompliance.Application.Queue
         }
 
 
-        public Message GetMessage()
+        public UnparsedEmailMessage GetMessage()
         {
             var factory = new ConnectionFactory() { HostName = "localhost" };
             using (var connection = factory.CreateConnection())

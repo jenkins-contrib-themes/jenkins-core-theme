@@ -13,7 +13,7 @@ namespace GetCompliance.Application.Email
 
         public CreateEmailResponse Handle(CreateEmailRequest request)
         {
-            var message = new Message
+            var message = new UnparsedEmailMessage
             {
                 File = request.File,
                 Filename = request.Name
