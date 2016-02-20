@@ -1,6 +1,6 @@
 using System.IO;
 using System.Linq;
-using GetCompliance.Application.DocumentParser;
+using GetCompliance.Application.EmailParser;
 using NUnit.Framework;
 
 namespace GetCompliance.Application.Tests

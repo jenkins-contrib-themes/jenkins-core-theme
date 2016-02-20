@@ -1,11 +1,11 @@
 ﻿using System.Collections.Generic;
 
-namespace GetCompliance.Application.Document
+namespace GetCompliance.Application.Email
 {
-    public class CreateDocumentResponse
+    public class CreateEmailResponse
     {
         public bool Success { get; set; }
         public ICollection<string> Errors { get; set; }
-        public int DocumentId { get; set; }
+        public int EmailId { get; set; }
     }
 }

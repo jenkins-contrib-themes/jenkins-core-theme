@@ -7,7 +7,7 @@ using RabbitMQ.Client.Events;
 
 namespace GetCompliance.Application.Queue
 {
-    public class DocumentQueue : IQueue
+    public class UnparsedEmailQueue : IQueue
     {
         public void PutMessage(Message message)
         {

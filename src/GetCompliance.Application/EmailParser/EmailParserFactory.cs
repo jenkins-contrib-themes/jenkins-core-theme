@@ -1,10 +1,10 @@
 using System.IO;
 
-namespace GetCompliance.Application.DocumentParser
+namespace GetCompliance.Application.EmailParser
 {
-    public static class DocumentParserFactory
+    public static class EmailParserFactory
     {
-        public static IDocumentParser CreateDocumentParser(string fileName)
+        public static IEmailParser CreateEmailParser(string fileName)
         {
             var fileInfo = new FileInfo(fileName);
             switch (fileInfo.Extension)

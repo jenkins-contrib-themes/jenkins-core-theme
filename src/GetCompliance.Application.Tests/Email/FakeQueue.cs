@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using GetCompliance.Application.Queue;
 
-namespace GetCompliance.Application.Tests.Document
+namespace GetCompliance.Application.Tests.Email
 {
     public class FakeQueue : IQueue
     {

@@ -59,10 +59,10 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Assets.cs" />
-    <Compile Include="DocumentParserFactoryTest.cs" />
-    <Compile Include="DocumentQueueTest.cs" />
-    <Compile Include="Document\CreateDocumentInteractorTest.cs" />
-    <Compile Include="Document\FakeQueue.cs" />
+    <Compile Include="EmailParserFactoryTest.cs" />
+    <Compile Include="UnparsedEmailQueueTest.cs" />
+    <Compile Include="Email\CreateEmailInteractorTest.cs" />
+    <Compile Include="Email\FakeQueue.cs" />
     <Compile Include="EmlParserTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

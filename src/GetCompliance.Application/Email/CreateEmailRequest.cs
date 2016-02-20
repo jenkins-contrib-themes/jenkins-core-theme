@@ -1,8 +1,8 @@
 ﻿using System.IO;
 
-namespace GetCompliance.Application.Document
+namespace GetCompliance.Application.Email
 {
-    public class CreateDocumentRequest
+    public class CreateEmailRequest
     {
         public string Name { get; set; }
         public Stream File { get; set; }

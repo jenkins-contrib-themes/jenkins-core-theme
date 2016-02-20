@@ -1,14 +1,14 @@
 using System.Linq;
 using System.Net.Mail;
 
-namespace GetCompliance.Application.DocumentParser
+namespace GetCompliance.Application.EmailParser
 {
     public static class MailMessageExtensions
     {
-        public static Domain.Document ToDocument(this MailMessage message)
+        public static Domain.Email ToGetComplianceEmail(this MailMessage message)
         {
 
-            var document = new Domain.Document
+            var document = new Domain.Email
             {
                 Subject = message.Subject,
                 Body = message.Body,

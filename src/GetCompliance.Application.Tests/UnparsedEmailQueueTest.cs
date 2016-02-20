@@ -3,12 +3,12 @@ using NUnit.Framework;
 
 namespace GetCompliance.Application.Tests
 {
-    public class DocumentQueueTest
+    public class UnparsedEmailQueueTest
     {
-        private readonly DocumentQueue _sut;
-        public DocumentQueueTest()
+        private readonly UnparsedEmailQueue _sut;
+        public UnparsedEmailQueueTest()
         {
-            _sut = new DocumentQueue();
+            _sut = new UnparsedEmailQueue();
         }
         [Test]
         public void PutMessageTest()

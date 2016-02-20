@@ -4,7 +4,7 @@ using GetCompliance.Domain.Infrastructure;
 
 namespace GetCompliance.Domain
 {
-    public class Document : EntityBase
+    public class Email : EntityBase
     {
         protected override void Validate()
         {

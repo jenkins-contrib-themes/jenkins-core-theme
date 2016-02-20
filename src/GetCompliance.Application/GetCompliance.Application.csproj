@@ -45,15 +45,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DocumentParser\DocumentParserFactory.cs" />
-    <Compile Include="DocumentParser\EmlParser.cs" />
-    <Compile Include="DocumentParser\IDocumentParser.cs" />
-    <Compile Include="DocumentParser\MailMessageExtensions.cs" />
-    <Compile Include="DocumentParser\NullParser.cs" />
-    <Compile Include="Document\CreateDocumentInteractor.cs" />
-    <Compile Include="Document\CreateDocumentRequest.cs" />
-    <Compile Include="Document\CreateDocumentResponse.cs" />
-    <Compile Include="Queue\DocumentQueue.cs" />
+    <Compile Include="EmailParser\EmailParserFactory.cs" />
+    <Compile Include="EmailParser\EmlParser.cs" />
+    <Compile Include="EmailParser\IEmailParser.cs" />
+    <Compile Include="EmailParser\MailMessageExtensions.cs" />
+    <Compile Include="EmailParser\NullParser.cs" />
+    <Compile Include="Email\CreateEmailInteractor.cs" />
+    <Compile Include="Email\CreateEmailRequest.cs" />
+    <Compile Include="Email\CreateEmailResponse.cs" />
+    <Compile Include="Queue\UnparsedEmailQueue.cs" />
     <Compile Include="Queue\IQueue.cs" />
     <Compile Include="Queue\Message.cs" />
     <Compile Include="Queue\Queue.cs" />

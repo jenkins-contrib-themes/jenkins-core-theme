@@ -1,21 +1,21 @@
-﻿using GetCompliance.Application.DocumentParser;
+﻿using GetCompliance.Application.EmailParser;
 using NUnit.Framework;
 
 namespace GetCompliance.Application.Tests
 {
-    public class DocumentParserFactoryTest
+    public class EmailParserFactoryTest
     {
         [Test]
         public void ShouldCreateEmlParserWhenTheFileHasEmlExtension()
         {
-            var result = DocumentParserFactory.CreateDocumentParser("email.eml");
+            var result = EmailParserFactory.CreateEmailParser("email.eml");
             Assert.IsInstanceOf<EmlParser>(result);
         }
 
         [Test]
         public void ShouldCreateNullParserWhenTheExtensionIsUnknow()
         {
-            var result = DocumentParserFactory.CreateDocumentParser("email.unknowExtension");
+            var result = EmailParserFactory.CreateEmailParser("email.unknowExtension");
             Assert.IsInstanceOf<NullParser>(result);
         }
     }

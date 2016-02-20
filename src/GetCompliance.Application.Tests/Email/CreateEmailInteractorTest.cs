@@ -1,18 +1,18 @@
 ﻿using System.IO;
-using GetCompliance.Application.Document;
+using GetCompliance.Application.Email;
 using GetCompliance.Application.Queue;
 using NUnit.Framework;
 
-namespace GetCompliance.Application.Tests.Document
+namespace GetCompliance.Application.Tests.Email
 {
-    public class CreateDocumentInteractorTest
+    public class CreateEmailInteractorTest
     {
-        private readonly IRequestHandler<CreateDocumentRequest, CreateDocumentResponse> _sut;
+        private readonly IRequestHandler<CreateEmailRequest, CreateEmailResponse> _sut;
         private readonly IQueue _queue = new FakeQueue();
 
-        public CreateDocumentInteractorTest()
+        public CreateEmailInteractorTest()
         {
-            _sut = new CreateDocumentInteractor(_queue);
+            _sut = new CreateEmailInteractor(_queue);
         }
 
         [Test]
@@ -21,7 +21,7 @@ namespace GetCompliance.Application.Tests.Document
 
             var messageFile = new FileInfo(Assets.EmlTestFilePath);
 
-            var request = new CreateDocumentRequest
+            var request = new CreateEmailRequest
             {
                 Name = messageFile.Name,
                 File = messageFile.OpenRead()
