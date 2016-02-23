@@ -7,7 +7,7 @@ using RabbitMQ.Client.Events;
 
 namespace GetCompliance.Application.Queue
 {
-    public class UnparsedEmailQueue : IQueue
+    public class UnparsedEmailQueue
     {
         public void PutMessage(UnparsedEmailMessage unparsedEmailMessage)
         {
@@ -15,34 +15,34 @@ namespace GetCompliance.Application.Queue
             using (var connection = factory.CreateConnection())
             using (var channel = connection.CreateModel())
             {
-                var properties = channel.CreateBasicProperties();
-                properties.Persistent = true;
+                
                 channel.QueueDeclare(queue: "unparsed_emails",
                                      durable: true,
                                      exclusive: false,
                                      autoDelete: false,
                                      arguments: null);
 
-                string msg = "Hello World!";
-                var body = Encoding.UTF8.GetBytes(msg);
+                var body = unparsedEmailMessage.SerializeAsBytes();
 
+
+                var properties = channel.CreateBasicProperties();
+                properties.Persistent = true;
                 channel.BasicPublish(exchange: "",
-                                     routingKey: "hello",
-                                     basicProperties: null,
+                                     routingKey: "",
+                                     basicProperties: properties,
                                      body: body);
-                Console.WriteLine(" [x] Sent {0}", msg);
+
+                Console.WriteLine("[x] Sent");
             }
         }
 
 
-        public UnparsedEmailMessage GetMessage()
+        public void GetMessage()
         {
             var factory = new ConnectionFactory() { HostName = "localhost" };
             using (var connection = factory.CreateConnection())
             using (var channel = connection.CreateModel())
             {
-                var properties = channel.CreateBasicProperties();
-                properties.Persistent = true;
                 channel.QueueDeclare(queue: "unparsed_emails",
                                      durable: true,
                                      exclusive: false,
@@ -53,8 +53,8 @@ namespace GetCompliance.Application.Queue
                 consumer.Received += (model, ea) =>
                 {
 
-                    var message = Encoding.UTF8.GetString(ea.Body);
-                    Trace.Write("[x] Received {0}", message);
+                    var message = new UnparsedEmailMessage(ea.Body);
+                    Trace.Write("[x] Received {0}", message.Filename);
                     // ReSharper disable once AccessToDisposedClosure
                     channel.BasicAck(deliveryTag: ea.DeliveryTag, multiple: false);
                 };
@@ -63,8 +63,6 @@ namespace GetCompliance.Application.Queue
                                      noAck: false,
                                      consumer: consumer);
             }
-
-            return null;
         }
 
         private void ConsumerOnRegistered(object sender, ConsumerEventArgs consumerEventArgs)
