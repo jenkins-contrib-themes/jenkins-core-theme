@@ -1,0 +1,94 @@
+.navbar-nav > li > .dropdown-menu.notifications-list {
+    min-width: 320px;
+    padding-bottom: 0;
+    padding-top: 0;
+    margin-top: -8px;
+    color: #707070;
+}
+.notifications-list .item-header {
+    font-size: 0.875em;
+    font-weight: bold;
+    line-height: 40px;
+    text-align: center;
+}
+.notifications-list .item {
+    border-top: 1px solid #EBEBEB;
+    line-height: 1.4;
+    padding-bottom: 0;
+    padding-top: 0;
+    clear: both;
+}
+.notifications-list .item a {
+    clear: both;
+    white-space: normal;
+    padding-bottom: 7px;
+    padding-top: 7px;
+}
+.notifications-list .item > a > i {
+    color: #5A738E;
+    width: 20px;
+}
+.notifications-list .item a .content {
+
+}
+.notifications-list .item a .time {
+    color: #D6D6D6;
+    margin-left: 10px;
+    position: absolute;
+    right: 13px;
+    white-space: normal !important;
+}
+.notifications-list .item a .time i {
+    margin-right: 3px;
+    color: #D6D6D6;
+}
+.notifications-list .item-footer {
+    background: #1ABB9C;
+    padding-bottom: 0;
+    padding-top: 0;
+}
+.notifications-list .item-footer a {
+    color: #ffffff;
+    padding: 8px 20px;
+    text-align: center;
+    -webkit-transition: border-color 0.1s ease-in-out 0s, background-color 0.1s ease-in-out 0s;
+    transition: border-color 0.1s ease-in-out 0s, background-color 0.1s ease-in-out 0s;
+}
+.notifications-list .item-footer a:hover,
+.notifications-list .item-footer a:focus {
+    background-color: #34d1be;
+    color: #fff;
+}
+.notifications-list .pointer {
+    height: 12px;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    right: 21px;
+    top: -12px;
+    width: 12px;
+}
+.notifications-list .pointer .pointer-inner {
+    position: relative;
+}
+.notifications-list .pointer .arrow {
+    border-color: transparent transparent #FFFFFF;
+    border-style: solid;
+    border-width: 6px;
+    cursor: pointer;
+    left: auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1002;
+}
+.notifications-list .pointer .arrow-border {
+    border-color: transparent transparent rgba(0, 0, 0, 0.15);
+    border-style: solid;
+    border-width: 7px;
+    cursor: pointer;
+    left: -1px;
+    position: absolute;
+    top: -2px;
+    z-index: 1001;
+}
