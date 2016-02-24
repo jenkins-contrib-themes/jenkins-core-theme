@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GetCompliance.Infra.Crosscut.IoC", "GetCompliance.Infra.Crosscut.IoC\GetCompliance.Infra.Crosscut.IoC.csproj", "{5D936EE8-3435-44D2-ACC8-AC847B4C7F98}"
 EndProject
@@ -33,7 +33,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "S22.Mail", "S22.Mail\S22.Ma
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Presentation", "1 - Presentation", "{390C8843-9296-48D3-985E-BDF0CB6CE6E1}"
 EndProject
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "GetCompliance.Presentation.UI", "GetCompliance.Presentation.UI\", "{D4E178F2-C6C4-474E-AF18-E0B88DEB2BD7}"
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "GetCompliance.Presentation.UI(1)", "GetCompliance.Presentation.UI\", "{D4E178F2-C6C4-474E-AF18-E0B88DEB2BD7}"
 	ProjectSection(WebsiteProperties) = preProject
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
 		Debug.AspNetCompiler.VirtualPath = "/localhost_3391"
@@ -51,7 +51,12 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "GetCompliance.Presentation.
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
 		VWDPort = "3391"
+		SlnRelativePath = "GetCompliance.Presentation.UI\"
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GetCompliance.RabbitMQ.Producer.Tests", "GetCompliance.RabbitMQ.Producer.Tests\GetCompliance.RabbitMQ.Producer.Tests.csproj", "{7E1896DB-E8B6-4EF6-A564-9231BFF7BBCB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GetCompliance.RabbitMQ.Consumer.Tests", "GetCompliance.RabbitMQ.Consumer.Tests\GetCompliance.RabbitMQ.Consumer.Tests.csproj", "{7F8FAEFC-DB4B-405A-B20D-A3DBFF58B1BF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -95,6 +100,14 @@ Global
 		{D4E178F2-C6C4-474E-AF18-E0B88DEB2BD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D4E178F2-C6C4-474E-AF18-E0B88DEB2BD7}.Release|Any CPU.ActiveCfg = Debug|Any CPU
 		{D4E178F2-C6C4-474E-AF18-E0B88DEB2BD7}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{7E1896DB-E8B6-4EF6-A564-9231BFF7BBCB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E1896DB-E8B6-4EF6-A564-9231BFF7BBCB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E1896DB-E8B6-4EF6-A564-9231BFF7BBCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E1896DB-E8B6-4EF6-A564-9231BFF7BBCB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F8FAEFC-DB4B-405A-B20D-A3DBFF58B1BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F8FAEFC-DB4B-405A-B20D-A3DBFF58B1BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F8FAEFC-DB4B-405A-B20D-A3DBFF58B1BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F8FAEFC-DB4B-405A-B20D-A3DBFF58B1BF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -111,5 +124,7 @@ Global
 		{E02C695E-6FEC-4A4F-9519-95F5AF1B1814} = {77CA314A-647F-4AEF-9282-239C717A5970}
 		{CA72A1AA-6F1A-4D5F-B98B-FD73F5407563} = {DA328FFC-5132-4C07-9BE9-E58C742C48F9}
 		{D4E178F2-C6C4-474E-AF18-E0B88DEB2BD7} = {390C8843-9296-48D3-985E-BDF0CB6CE6E1}
+		{7E1896DB-E8B6-4EF6-A564-9231BFF7BBCB} = {DA328FFC-5132-4C07-9BE9-E58C742C48F9}
+		{7F8FAEFC-DB4B-405A-B20D-A3DBFF58B1BF} = {DA328FFC-5132-4C07-9BE9-E58C742C48F9}
 	EndGlobalSection
 EndGlobal

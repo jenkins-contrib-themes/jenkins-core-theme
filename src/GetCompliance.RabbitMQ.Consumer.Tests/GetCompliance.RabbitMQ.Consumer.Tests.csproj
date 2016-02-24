@@ -4,16 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{7D68E77B-0A75-4BAC-98E9-05E69B3B6196}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <ProjectGuid>{7F8FAEFC-DB4B-405A-B20D-A3DBFF58B1BF}</ProjectGuid>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>GetCompliance.Application</RootNamespace>
-    <AssemblyName>GetCompliance.Application</AssemblyName>
+    <RootNamespace>GetCompliance.RabbitMQ.Consumer.Tests</RootNamespace>
+    <AssemblyName>GetCompliance.RabbitMQ.Consumer.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,6 +24,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -45,36 +47,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EmailParser\EmailParserFactory.cs" />
-    <Compile Include="EmailParser\EmlParser.cs" />
-    <Compile Include="EmailParser\IEmailParser.cs" />
-    <Compile Include="EmailParser\MailMessageExtensions.cs" />
-    <Compile Include="EmailParser\NullParser.cs" />
-    <Compile Include="Email\CreateEmailInteractor.cs" />
-    <Compile Include="Email\CreateEmailRequest.cs" />
-    <Compile Include="Email\CreateEmailResponse.cs" />
-    <Compile Include="Queue\IQueueConsumer.cs" />
-    <Compile Include="Queue\RabbitMqQueueManager.cs" />
-    <Compile Include="Queue\IQueueManager.cs" />
-    <Compile Include="IRequestHandler.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\GetCompliance.Domain\GetCompliance.Domain.csproj">
-      <Project>{EF05A591-BAB3-495B-B42D-496D8FC13BD9}</Project>
-      <Name>GetCompliance.Domain</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\GetCompliance.Infra.Data\GetCompliance.Infra.Data.csproj">
-      <Project>{89918CC0-34C0-47C3-852E-DC58A5DE42A1}</Project>
-      <Name>GetCompliance.Infra.Data</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\S22.Mail\S22.Mail.csproj">
-      <Project>{ca72a1aa-6f1a-4d5f-b98b-fd73f5407563}</Project>
-      <Name>S22.Mail</Name>
-    </ProjectReference>
+    <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
+    <ProjectReference Include="..\GetCompliance.Application\GetCompliance.Application.csproj">
+      <Project>{7D68E77B-0A75-4BAC-98E9-05E69B3B6196}</Project>
+      <Name>GetCompliance.Application</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -1,70 +1,62 @@
 ﻿using System;
-using System.Diagnostics;
-using GetCompliance.Domain;
 using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
 
 namespace GetCompliance.Application.Queue
 {
-    public class RabbitMqQueueManager : IQueueManager
+
+    public class RabbitMqQueueManager : IQueueManager, IDisposable
     {
+        private readonly IConnection _connection;
+        private readonly IModel _channel;
+        public RabbitMqQueueManager()
+        {
+            var factory = new ConnectionFactory() { HostName = "localhost" };
+            _connection = factory.CreateConnection();
+            _channel = _connection.CreateModel();
+        }
         public void PutMessage(string queueName, byte[] message)
         {
-            var factory = new ConnectionFactory() { HostName = "localhost" };
-            using (var connection = factory.CreateConnection())
-            using (var channel = connection.CreateModel())
-            {
-                
-                channel.QueueDeclare(queue: queueName,
-                                     durable: true,
-                                     exclusive: false,
-                                     autoDelete: false,
-                                     arguments: null);
+            _channel.QueueDeclare(queue: queueName,
+                                 durable: true,
+                                 exclusive: false,
+                                 autoDelete: false,
+                                 arguments: null);
 
-                var properties = channel.CreateBasicProperties();
-                properties.Persistent = true;
-                channel.BasicPublish(exchange: "",
-                                     routingKey: "",
-                                     basicProperties: properties,
-                                     body: message);
-
-                Console.WriteLine("[x] Sent");
-            }
+            var properties = _channel.CreateBasicProperties();
+            properties.Persistent = true;
+            _channel.BasicPublish(exchange: "",
+                                 routingKey: queueName,
+                                 basicProperties: properties,
+                                 body: message);
         }
 
 
-        public void GetMessage()
+        public void RegisterConsumer(string queueName, IQueueConsumer consumerq)
         {
-            var factory = new ConnectionFactory() { HostName = "localhost" };
-            using (var connection = factory.CreateConnection())
-            using (var channel = connection.CreateModel())
+            _channel.QueueDeclare(queue: queueName,
+                durable: true,
+                exclusive: false,
+                autoDelete: false,
+                arguments: null);
+
+            _channel.BasicQos(prefetchSize: 0, prefetchCount: 1, global: false);
+
+            var consumer = new EventingBasicConsumer(_channel);
+            consumer.Received += (model, ea) =>
             {
-                channel.QueueDeclare(queue: "unparsed_emails",
-                                     durable: true,
-                                     exclusive: false,
-                                     autoDelete: false,
-                                     arguments: null);
-
-                var consumer = new EventingBasicConsumer(channel);
-                consumer.Received += (model, ea) =>
-                {
-
-                    var message = new UnparsedEmail(ea.Body);
-                    Trace.Write("[x] Received {0}", message.Filename);
-                    // ReSharper disable once AccessToDisposedClosure
-                    channel.BasicAck(deliveryTag: ea.DeliveryTag, multiple: false);
-                };
-                consumer.Registered += ConsumerOnRegistered;
-                channel.BasicConsume(queue: "unparsed_emails",
-                                     noAck: false,
-                                     consumer: consumer);
-            }
+                consumerq.Consume(ea.Body);
+                _channel.BasicAck(deliveryTag: ea.DeliveryTag, multiple: false);
+            };
+            _channel.BasicConsume(queue: queueName,
+                noAck: false,
+                consumer: consumer);
         }
 
-        private void ConsumerOnRegistered(object sender, ConsumerEventArgs consumerEventArgs)
+        public void Dispose()
         {
-            Trace.Write("Registered");
+            _connection.Dispose();
+            _channel.Dispose();
         }
-
     }
 }
