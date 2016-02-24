@@ -1,14 +1,13 @@
 ﻿using System;
 using System.Collections.Specialized;
-using System.Net.Mime;
 
-namespace S22.Mail {
+namespace S22.Mail.SerializableMailMessage {
 	[Serializable]
 	public class SerializableContentType {
-		public static implicit operator ContentType(SerializableContentType contentType) {
+		public static implicit operator System.Net.Mime.ContentType(SerializableContentType contentType) {
 			if (contentType == null)
 				return null;
-			ContentType ct = new ContentType();
+			System.Net.Mime.ContentType ct = new System.Net.Mime.ContentType();
 
 			ct.Boundary = contentType.Boundary;
 			ct.CharSet = contentType.CharSet;
@@ -19,13 +18,13 @@ namespace S22.Mail {
 			return ct;
 		}
 
-		public static implicit operator SerializableContentType(ContentType contentType) {
+		public static implicit operator SerializableContentType(System.Net.Mime.ContentType contentType) {
 			if (contentType == null)
 				return null;
 			return new SerializableContentType(contentType);
 		}
 
-		private SerializableContentType(ContentType contentType) {
+		private SerializableContentType(System.Net.Mime.ContentType contentType) {
 			Boundary = contentType.Boundary;
 			CharSet = contentType.CharSet;
 			MediaType = contentType.MediaType;

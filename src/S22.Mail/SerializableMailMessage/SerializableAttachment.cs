@@ -4,7 +4,7 @@ using System.Net.Mail;
 using System.Net.Mime;
 using System.Text;
 
-namespace S22.Mail {
+namespace S22.Mail.SerializableMailMessage {
 	[Serializable]
 	public class SerializableAttachment {
 		public static implicit operator Attachment(SerializableAttachment attachment) {

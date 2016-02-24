@@ -1,6 +1,6 @@
 using System.IO;
 
-namespace GetCompliance.Application.Queue
+namespace GetCompliance.Domain
 {
     public static class StreamExtensions
     {

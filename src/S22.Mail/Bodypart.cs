@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace S22.Imap {
+namespace S22.Mail {
 	/// <summary>
 	/// Represents a MIME body part of a mail message that has multiple
 	/// parts.

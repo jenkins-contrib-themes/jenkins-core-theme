@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace S22.Imap {
+namespace S22.Mail {
 	/// <summary>
 	/// Represents the content disposition as is presented in the BODYSTRUCTURE
 	/// response by the IMAP server.

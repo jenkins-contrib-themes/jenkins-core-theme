@@ -3,7 +3,7 @@ using System.IO;
 using System.Net.Mail;
 using System.Net.Mime;
 
-namespace S22.Mail {
+namespace S22.Mail.SerializableMailMessage {
 	[Serializable]
 	public class SerializableAlternateView {
 		public static implicit operator AlternateView(SerializableAlternateView view) {

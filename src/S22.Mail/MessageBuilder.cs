@@ -6,7 +6,7 @@ using System.Net.Mail;
 using System.Text;
 using System.Text.RegularExpressions;
 
-namespace S22.Imap {
+namespace S22.Mail {
 	/// <summary>
 	/// A helper class for reading mail message data and building a MailMessage
 	/// instance out of it.

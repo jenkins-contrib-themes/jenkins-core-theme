@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace S22.Imap {
+namespace S22.Mail {
 	/// <summary>
 	/// Possible values for the "Encoding" property of the Bodypart class. The content
 	/// transfer encoding indicates whether or not a binary-to-text encoding

@@ -3,7 +3,7 @@ using System.Collections.Specialized;
 using System.Net.Mail;
 using System.Text;
 
-namespace S22.Mail {
+namespace S22.Mail.SerializableMailMessage {
 	/// <summary>
 	/// A serializable replication of the MailMessage class of the
 	/// System.Net.Mail namespace. It implements conversion operators to allow for

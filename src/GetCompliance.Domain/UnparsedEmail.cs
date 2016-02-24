@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
-using GetCompliance.Application.Queue;
 using GetCompliance.Domain.Infrastructure;
 
 namespace GetCompliance.Domain

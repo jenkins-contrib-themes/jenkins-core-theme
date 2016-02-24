@@ -1,6 +1,5 @@
 ﻿using System.IO;
 using GetCompliance.Application.Email;
-using GetCompliance.Application.Queue;
 using NUnit.Framework;
 
 namespace GetCompliance.Application.Tests.Email

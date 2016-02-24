@@ -1,14 +1,13 @@
 ﻿using System;
 using System.Collections.Specialized;
-using System.Net.Mime;
 
-namespace S22.Mail {
+namespace S22.Mail.SerializableMailMessage {
 	[Serializable]
 	public class SerializableContentDisposition {
-		public static implicit operator ContentDisposition(SerializableContentDisposition disposition) {
+		public static implicit operator System.Net.Mime.ContentDisposition(SerializableContentDisposition disposition) {
 			if (disposition == null)
 				return null;
-			ContentDisposition d = new ContentDisposition();
+			System.Net.Mime.ContentDisposition d = new System.Net.Mime.ContentDisposition();
 
 			d.CreationDate = disposition.CreationDate;
 			d.DispositionType = disposition.DispositionType;
@@ -22,13 +21,13 @@ namespace S22.Mail {
 			return d;
 		}
 
-		public static implicit operator SerializableContentDisposition(ContentDisposition disposition) {
+		public static implicit operator SerializableContentDisposition(System.Net.Mime.ContentDisposition disposition) {
 			if (disposition == null)
 				return null;
 			return new SerializableContentDisposition(disposition);
 		}
 
-		private SerializableContentDisposition(ContentDisposition disposition) {
+		private SerializableContentDisposition(System.Net.Mime.ContentDisposition disposition) {
 			CreationDate = disposition.CreationDate;
 			DispositionType = disposition.DispositionType;
 			FileName = disposition.FileName;

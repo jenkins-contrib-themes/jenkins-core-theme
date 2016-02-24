@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace S22.Imap {
+namespace S22.Mail {
 	/// <summary>
 	/// Possible values for the "Type" property of the Bodypart class.
 	/// For a detailed description of MIME Media Types refer to

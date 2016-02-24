@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Net.Mail;
 
-namespace S22.Mail {
+namespace S22.Mail.SerializableMailMessage {
 	[Serializable]
 	public class SerializableMailAddress {
 		public static implicit operator MailAddress(SerializableMailAddress address) {
