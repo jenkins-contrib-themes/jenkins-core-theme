@@ -1,0 +1,11 @@
+$fa-font-path: "../node_modules/font-awesome/fonts";
+
+@import "../../node_modules/normalize.css/normalize.css";
+@import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+@import "../../node_modules/font-awesome/scss/font-awesome";
+@import "../../node_modules/icheck/skins/flat/green.css";
+
+@import "fonts";
+
+@import "page";
+@import "component/notification-list";

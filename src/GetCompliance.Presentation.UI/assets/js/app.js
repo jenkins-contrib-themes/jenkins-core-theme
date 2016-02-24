@@ -6,45 +6,48 @@
 
 /** ******  left menu  *********************** **/
 $(function () {
-    $('#sidebar-menu li ul').slideUp();
-    $('#sidebar-menu li').removeClass('active');
+    var $sidebarMenu = $('#sidebar-menu');
+    $sidebarMenu.find('li ul').slideUp();
+    $sidebarMenu.find('li').removeClass('active');
 
-    $('#sidebar-menu li').click(function () {
+    $sidebarMenu.find('li').click(function () {
         if ($(this).is('.active')) {
             $(this).removeClass('active');
             $('ul', this).slideUp();
             $(this).removeClass('nv');
             $(this).addClass('vn');
         } else {
-            $('#sidebar-menu li ul').slideUp();
+            $sidebarMenu.find('li ul').slideUp();
             $(this).removeClass('vn');
             $(this).addClass('nv');
             $('ul', this).slideDown();
-            $('#sidebar-menu li').removeClass('active');
+            $sidebarMenu.find('li').removeClass('active');
             $(this).addClass('active');
         }
     });
 
     $('#menu_toggle').click(function () {
-        if ($('body').hasClass('nav-md')) {
-            $('body').removeClass('nav-md');
-            $('body').addClass('nav-sm');
-            $('.left_col').removeClass('scroll-view');
-            $('.left_col').removeAttr('style');
+        var $body = $('body');
+        var $leftCol = $('.left_col');
+        if ($body.hasClass('nav-md')) {
+            $body.removeClass('nav-md');
+            $body.addClass('nav-sm');
+            $leftCol.removeClass('scroll-view');
+            $leftCol.removeAttr('style');
             $('.sidebar-footer').hide();
 
-            if ($('#sidebar-menu li').hasClass('active')) {
-                $('#sidebar-menu li.active').addClass('active-sm');
-                $('#sidebar-menu li.active').removeClass('active');
+            if ($sidebarMenu.find('li').hasClass('active')) {
+                $sidebarMenu.find('li.active').addClass('active-sm');
+                $sidebarMenu.find('li.active').removeClass('active');
             }
         } else {
-            $('body').removeClass('nav-sm');
-            $('body').addClass('nav-md');
+            $body.removeClass('nav-sm');
+            $body.addClass('nav-md');
             $('.sidebar-footer').show();
 
-            if ($('#sidebar-menu li').hasClass('active-sm')) {
-                $('#sidebar-menu li.active-sm').addClass('active');
-                $('#sidebar-menu li.active-sm').removeClass('active-sm');
+            if ($sidebarMenu.find('li').hasClass('active-sm')) {
+                $sidebarMenu.find('li.active-sm').addClass('active');
+                $sidebarMenu.find('li.active-sm').removeClass('active-sm');
             }
         }
     });
@@ -52,9 +55,10 @@ $(function () {
 
 /* Sidebar Menu active class */
 $(function () {
+    var $sidebarMenu = $('#sidebar-menu');
     var url = window.location;
-    $('#sidebar-menu a[href="' + url + '"]').parent('li').addClass('current-page');
-    $('#sidebar-menu a').filter(function () {
+    $sidebarMenu.find('a[href="' + url + '"]').parent('li').addClass('current-page');
+    $sidebarMenu.find('a').filter(function () {
         return this.href == url;
     }).parent('li').addClass('current-page').parent('ul').slideDown().parent().addClass('active');
 });
@@ -62,13 +66,13 @@ $(function () {
 /** ******  /left menu  *********************** **/
 
 
-
 /** ******  tooltip  *********************** **/
 $(function () {
-        $('[data-toggle="tooltip"]').tooltip()
-    })
-    /** ******  /tooltip  *********************** **/
-    /** ******  progressbar  *********************** **/
+    $('[data-toggle="tooltip"]').tooltip()
+});
+
+/** ******  /tooltip  *********************** **/
+/** ******  progressbar  *********************** **/
 if ($(".progress .progress-bar")[0]) {
     $('.progress .progress-bar').progressbar(); // bootstrap 3
 }
@@ -125,7 +129,8 @@ var __slice = [].slice;
         Starrr.prototype.defaults = {
             rating: void 0,
             numStars: 5,
-            change: function (e, value) {}
+            change: function (e, value) {
+            }
         };
 
         function Starrr($el, options) {
@@ -266,30 +271,30 @@ $('.bulk_action input#check-all').on('ifUnchecked', function () {
 });
 
 function countChecked() {
-        if (check_state == 'check_all') {
-            $(".bulk_action input[name='table_records']").iCheck('check');
-        }
-        if (check_state == 'uncheck_all') {
-            $(".bulk_action input[name='table_records']").iCheck('uncheck');
-        }
-        var n = $(".bulk_action input[name='table_records']:checked").length;
-        if (n > 0) {
-            //$('.column-title').hide();
-            $('.bulk-actions').show();
-            $('.action-cnt').html(n + ' E-mail(s) selecionado(s)');
-        } else {
-            //$('.column-title').show();
-            $('.bulk-actions').hide();
-        }
+    if (check_state == 'check_all') {
+        $(".bulk_action input[name='table_records']").iCheck('check');
     }
-    /** ******  /table  *********************** **/
-    /** ******    *********************** **/
-    /** ******    *********************** **/
-    /** ******    *********************** **/
-    /** ******    *********************** **/
-    /** ******    *********************** **/
-    /** ******    *********************** **/
-    /** ******  Accordion  *********************** **/
+    if (check_state == 'uncheck_all') {
+        $(".bulk_action input[name='table_records']").iCheck('uncheck');
+    }
+    var n = $(".bulk_action input[name='table_records']:checked").length;
+    if (n > 0) {
+        //$('.column-title').hide();
+        $('.bulk-actions').show();
+        $('.action-cnt').html(n + ' E-mail(s) selecionado(s)');
+    } else {
+        //$('.column-title').show();
+        $('.bulk-actions').hide();
+    }
+}
+/** ******  /table  *********************** **/
+/** ******    *********************** **/
+/** ******    *********************** **/
+/** ******    *********************** **/
+/** ******    *********************** **/
+/** ******    *********************** **/
+/** ******    *********************** **/
+/** ******  Accordion  *********************** **/
 
 $(function () {
     $(".expand").on("click", function () {
