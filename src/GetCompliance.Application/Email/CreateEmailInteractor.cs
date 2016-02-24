@@ -1,30 +1,48 @@
-﻿using GetCompliance.Application.Queue;
+﻿using System;
+using System.Linq;
+using System.Text;
+using GetCompliance.Application.Queue;
+using GetCompliance.Domain;
 
 namespace GetCompliance.Application.Email
 {
     public class CreateEmailInteractor : IRequestHandler<CreateEmailRequest, CreateEmailResponse>
     {
-        private readonly IQueue _unparsedEmailQueue;
+        private readonly IQueueManager _queueManager;
 
-        public CreateEmailInteractor(IQueue unparsedEmailQueue)
+        public CreateEmailInteractor(IQueueManager queueManager)
         {
-            _unparsedEmailQueue = unparsedEmailQueue;
+            _queueManager = queueManager;
         }
 
         public CreateEmailResponse Handle(CreateEmailRequest request)
         {
-            var message = new UnparsedEmailMessage
+            var message = new UnparsedEmail
             {
                 File = request.File,
                 Filename = request.Name
             };
 
-            _unparsedEmailQueue.PutMessage(message);
+            ThrowExceptionIfMessageIsInvalid(message);
+
+            var messageBytes = message.SerializeAsBytes();
+
+            _queueManager.PutMessage("unparsed_emails", messageBytes);
 
             return new CreateEmailResponse
             {
                 Success = true
             };
+        }
+
+        private static void ThrowExceptionIfMessageIsInvalid(UnparsedEmail message)
+        {
+            if (!message.GetBrokenRules().Any()) return;
+
+            var brokenRules = new StringBuilder();
+            brokenRules.AppendLine("There was a problem saving the UnparsedEmail:");
+            message.GetBrokenRules().ToList().ForEach(businessRule => brokenRules.AppendLine(businessRule.Rule));
+            throw new ApplicationException(brokenRules.ToString());
         }
     }
 }

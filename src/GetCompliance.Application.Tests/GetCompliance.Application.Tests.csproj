@@ -61,9 +61,8 @@
     <Compile Include="Assets.cs" />
     <Compile Include="EmailParserFactoryTest.cs" />
     <Compile Include="UnparsedEmailMessageTest.cs" />
-    <Compile Include="UnparsedEmailQueueTest.cs" />
     <Compile Include="Email\CreateEmailInteractorTest.cs" />
-    <Compile Include="Email\FakeQueue.cs" />
+    <Compile Include="Email\FakeQueueManager.cs" />
     <Compile Include="EmlParserTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -8,11 +8,11 @@ namespace GetCompliance.Application.Tests.Email
     public class CreateEmailInteractorTest
     {
         private readonly IRequestHandler<CreateEmailRequest, CreateEmailResponse> _sut;
-        private readonly IQueue _queue = new FakeQueue();
+        private readonly FakeQueueManager _queueManager = new FakeQueueManager();
 
         public CreateEmailInteractorTest()
         {
-            _sut = new CreateEmailInteractor(_queue);
+            _sut = new CreateEmailInteractor(_queueManager);
         }
 
         [Test]
@@ -28,10 +28,8 @@ namespace GetCompliance.Application.Tests.Email
             };
 
             var result = _sut.Handle(request);
-
-            var message = _queue.GetMessage();
-
-            Assert.IsNotNull(message);
+            Assert.AreEqual("unparsed_emails", _queueManager.LastName);
+            Assert.IsNotNull(_queueManager.LastMessage);
             Assert.IsTrue(result.Success);
         }
     }

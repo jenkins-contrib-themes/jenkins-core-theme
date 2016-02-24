@@ -3,14 +3,16 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using GetCompliance.Application.Queue;
+using GetCompliance.Domain.Infrastructure;
 
-namespace GetCompliance.Application.Queue
+namespace GetCompliance.Domain
 {
-    public class UnparsedEmailMessage
+    public class UnparsedEmail : EntityBase
     {
-        public UnparsedEmailMessage() { }
+        public UnparsedEmail() { }
 
-        public UnparsedEmailMessage(byte[] bytes)
+        public UnparsedEmail(byte[] bytes)
         {
             var filenameSize = GetFilenameSize(bytes.First());
             File = GetFile(bytes, filenameSize);
@@ -37,11 +39,6 @@ namespace GetCompliance.Application.Queue
 
         public byte[] SerializeAsBytes()
         {
-            if (Filename.Length > 255)
-            {
-                throw new PathTooLongException($"The filename {Filename} is too long");
-            }
-
             var messageBytes = new List<byte>
             {
                 Convert.ToByte(Filename.Length)
@@ -50,6 +47,14 @@ namespace GetCompliance.Application.Queue
             messageBytes.AddRange(File.ReadAsBytes());
 
             return messageBytes.ToArray();
+        }
+
+        protected override void Validate()
+        {
+            if (Filename.Length > 255)
+            {
+                AddBrokenRule(UnparsedEmailRules.FilenameMaxLength);
+            }
         }
     }
 }

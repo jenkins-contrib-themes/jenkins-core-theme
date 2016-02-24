@@ -1,36 +1,32 @@
 ﻿using System;
 using System.Diagnostics;
-using System.Net;
-using System.Text;
+using GetCompliance.Domain;
 using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
 
 namespace GetCompliance.Application.Queue
 {
-    public class UnparsedEmailQueue
+    public class RabbitMqQueueManager : IQueueManager
     {
-        public void PutMessage(UnparsedEmailMessage unparsedEmailMessage)
+        public void PutMessage(string queueName, byte[] message)
         {
             var factory = new ConnectionFactory() { HostName = "localhost" };
             using (var connection = factory.CreateConnection())
             using (var channel = connection.CreateModel())
             {
                 
-                channel.QueueDeclare(queue: "unparsed_emails",
+                channel.QueueDeclare(queue: queueName,
                                      durable: true,
                                      exclusive: false,
                                      autoDelete: false,
                                      arguments: null);
-
-                var body = unparsedEmailMessage.SerializeAsBytes();
-
 
                 var properties = channel.CreateBasicProperties();
                 properties.Persistent = true;
                 channel.BasicPublish(exchange: "",
                                      routingKey: "",
                                      basicProperties: properties,
-                                     body: body);
+                                     body: message);
 
                 Console.WriteLine("[x] Sent");
             }
@@ -53,7 +49,7 @@ namespace GetCompliance.Application.Queue
                 consumer.Received += (model, ea) =>
                 {
 
-                    var message = new UnparsedEmailMessage(ea.Body);
+                    var message = new UnparsedEmail(ea.Body);
                     Trace.Write("[x] Received {0}", message.Filename);
                     // ReSharper disable once AccessToDisposedClosure
                     channel.BasicAck(deliveryTag: ea.DeliveryTag, multiple: false);

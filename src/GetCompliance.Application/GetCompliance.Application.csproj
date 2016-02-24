@@ -53,11 +53,8 @@
     <Compile Include="Email\CreateEmailInteractor.cs" />
     <Compile Include="Email\CreateEmailRequest.cs" />
     <Compile Include="Email\CreateEmailResponse.cs" />
-    <Compile Include="Queue\StreamExtensions.cs" />
-    <Compile Include="Queue\UnparsedEmailQueue.cs" />
-    <Compile Include="Queue\IQueue.cs" />
-    <Compile Include="Queue\UnparsedEmailMessage.cs" />
-    <Compile Include="Queue\Queue.cs" />
+    <Compile Include="Queue\RabbitMqQueueManager.cs" />
+    <Compile Include="Queue\IQueueManager.cs" />
     <Compile Include="IRequestHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
