@@ -9,18 +9,33 @@
     <link rel="stylesheet" href="css/app.css">
 </head>
 
-<body ng-app="app">
-<div class="container ng-cloak">
-    <div ng-include="'app/components/shared/header.html'"></div>
-    <div ng-view></div>
+<body class="nav-md" ng-app="app">
+
+<div class="container body">
+    <div class="main_container">
+
+        <div class="col-md-3 left_col">
+            <div class="left_col scroll-view">
+                <div ng-include="'app/components/shared/sidemenu.html'"></div>
+            </div>
+        </div>
+
+        <div class="container ng-cloak">
+            <div ng-include="'app/components/shared/header.html'"></div>
+            <div ng-view></div>
+        </div>
+
+    </div>
 </div>
 
 <script src="node_modules/jquery/dist/jquery.min.js"></script>
+<script src="node_modules/icheck/icheck.min.js"></script>
 <script src="node_modules/angular/angular.min.js"></script>
 <script src="node_modules/angular-route/angular-route.min.js"></script>
 
 <script src="app/app.js"></script>
 <script src="app/routes.js"></script>
+<script src="app/components/forms/i-check.directive.js"></script>
 
 </body>
 </html>
