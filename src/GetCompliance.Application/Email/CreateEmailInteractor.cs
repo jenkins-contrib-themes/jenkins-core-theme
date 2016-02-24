@@ -40,7 +40,7 @@ namespace GetCompliance.Application.Email
             if (!message.GetBrokenRules().Any()) return;
 
             var brokenRules = new StringBuilder();
-            brokenRules.AppendLine("There was a problem saving the UnparsedEmail:");
+            brokenRules.AppendLine("There was a problem saving the unparsed email:");
             message.GetBrokenRules().ToList().ForEach(businessRule => brokenRules.AppendLine(businessRule.Rule));
             throw new ApplicationException(brokenRules.ToString());
         }

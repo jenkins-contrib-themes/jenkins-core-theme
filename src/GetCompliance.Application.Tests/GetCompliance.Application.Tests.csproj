@@ -60,7 +60,7 @@
   <ItemGroup>
     <Compile Include="Assets.cs" />
     <Compile Include="EmailParserFactoryTest.cs" />
-    <Compile Include="UnparsedEmailMessageTest.cs" />
+    <Compile Include="Domain\UnparsedEmailTest.cs" />
     <Compile Include="Email\CreateEmailInteractorTest.cs" />
     <Compile Include="Email\FakeQueueManager.cs" />
     <Compile Include="EmlParserTest.cs" />
