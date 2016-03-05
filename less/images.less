@@ -63,8 +63,12 @@
   .animate();
 }
 
-.icon-clock {
+.icon-clock, .icon-clock-anime {
   .icon-img('../node_modules/jenkins-core-theme/images/play_circle_outline.svg', @color-grey);
+}
+
+.icon-clock-anime{
+  .pulse()
 }
 
 .icon-new-package, [src$='new-package.png'] {
