@@ -90,7 +90,7 @@
   }
 }
 
-.icon-notepad {
+.icon-notepad, [src$='notepad.png'] {
   .icon-img('../node_modules/jenkins-core-theme/images/history.svg', @color-grey);
 }
 
@@ -132,7 +132,7 @@
   .icon-img('../node_modules/jenkins-core-theme/images/help_outline.svg', @color-grey);
 }
 
-.icon-secure, [src$='secure.png'] {
+.icon-secure, .icon-lock, [src$='secure.png'] {
   .icon-img('../node_modules/jenkins-core-theme/images/lock.svg', @color-grey);
 }
 
@@ -230,8 +230,8 @@
   .icon-img('../node_modules/jenkins-core-theme/images/key.svg', @color-grey);
 }
 
-[src$='notepad.png'] {
-  .icon-img('../node_modules/jenkins-core-theme/images/history.svg', @color-grey);
+[src$='confighistory.png'] {
+  .icon-img('../node_modules/jenkins-core-theme/images/build.svg', @color-grey);
 }
 
 [src$='domain.png'] {
