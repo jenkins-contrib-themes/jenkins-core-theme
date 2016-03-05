@@ -1,5 +1,10 @@
 @import "functions";
 
+@size-sm: 18px;
+@size-md: 24px;
+@size-lg: 36px;
+@size-xl: 48px;
+
 /* Src */
 
 [src$='blue.png'] {
@@ -38,22 +43,26 @@
   .icon-img('../node_modules/jenkins-core-theme/images/weather-pouring.svg', @color-grey);
 }
 
-.icon-blue-anime {
+.icon-blue-anime, [src$='blue_anime.gif'] {
   .icon-img('../node_modules/jenkins-core-theme/images/autorenew.svg', @color-green);
 }
 
-.icon-red-anime {
+.icon-red-anime, [src$='red_anime.gif'] {
   .icon-img('../node_modules/jenkins-core-theme/images/autorenew.svg', @color-red);
 }
 
-.icon-grey-anime, .icon-nobuilt-anime, .icon-aborted-anime {
+.icon-grey-anime, [src$='grey_anime.gif'], .icon-nobuilt-anime, .icon-aborted-anime {
   .icon-img('../node_modules/jenkins-core-theme/images/autorenew.svg', @color-grey);
 }
 
-.icon-yellow-anime {
+.icon-yellow-anime, [src$='yellow_anime.gif'] {
   .icon-img('../node_modules/jenkins-core-theme/images/autorenew.svg', @color-yellow);
 }
 
+[src$='blue_anime.gif'],
+[src$='red_anime.gif'],
+[src$='grey_anime.gif'],
+[src$='yellow_anime.gif'],
 .icon-blue-anime,
 .icon-red-anime,
 .icon-grey-anime,
@@ -63,11 +72,7 @@
   .animate();
 }
 
-.icon-clock, .icon-clock-anime {
-  .icon-img('../node_modules/jenkins-core-theme/images/play_circle_outline.svg', @color-grey);
-}
-
-.icon-clock-anime{
+.icon-clock-anime {
   .pulse()
 }
 
@@ -111,7 +116,7 @@
   }
 }
 
-.icon-graph {
+.icon-graph, [src$='graph.png'] {
   .icon-img('../node_modules/jenkins-core-theme/images/insert_chart.svg', @color-grey);
 }
 
@@ -125,44 +130,26 @@
 
 .icon-help, [src$='help.png'] {
   .icon-img('../node_modules/jenkins-core-theme/images/help_outline.svg', @color-grey);
-  &[width="24"] {
-    .icon(@size-md);
-  }
 }
 
 .icon-secure, [src$='secure.png'] {
   .icon-img('../node_modules/jenkins-core-theme/images/lock.svg', @color-grey);
-  &[width="24"] {
-    .icon(@size-md);
-  }
 }
 
 .icon-plugin, [src$='plugin.png'] {
   .icon-img('../node_modules/jenkins-core-theme/images/extension.svg', @color-grey);
-  &[width="24"] {
-    .icon(@size-md);
-  }
 }
 
 .icon-system-log-out, [src$='system-log-out.png'] {
   .icon-img('../node_modules/jenkins-core-theme/images/power_settings_new.svg', @color-grey);
-  &[width="24"] {
-    .icon(@size-md);
-  }
 }
 
 .icon-refresh, [src$='refresh.png'] {
   .icon-img('../node_modules/jenkins-core-theme/images/refresh.svg', @color-grey);
-  &[width="24"] {
-    .icon(@size-md);
-  }
 }
 
 .icon-computer, [src$='computer.png'] {
   .icon-img('../node_modules/jenkins-core-theme/images/computer.svg', @color-grey);
-  &[width="24"] {
-    .icon(@size-md);
-  }
 }
 
 .icon-computer-x {
@@ -175,41 +162,33 @@
 
 .icon-clipboard, [src$='clipboard.png'] {
   .icon-img('../node_modules/jenkins-core-theme/images/assignment.svg', @color-grey);
-  &[width="24"] {
-    .icon(@size-md);
-  }
 }
 
 .icon-monitor, [src$='monitor.png'] {
   .icon-img('../node_modules/jenkins-core-theme/images/chart-areaspline.svg', @color-grey);
-  &[width="24"] {
-    .icon(@size-md);
-  }
 }
 
 .icon-terminal, [src$='terminal.png'] {
   .icon-img('../node_modules/jenkins-core-theme/images/console.svg', @color-grey);
-  &[width="24"] {
-    .icon(@size-md);
-  }
 }
 
 .icon-network, [src$='network.png'] {
   .icon-img('../node_modules/jenkins-core-theme/images/server-network.svg', @color-grey);
-  &[width="24"] {
-    .icon(@size-md);
-  }
 }
 
 .icon-document, .icon-text {
   .icon-img('../node_modules/jenkins-core-theme/images/file.svg', @color-grey);
 }
 
-.icon-folder {
+.icon-folder, [src$='folder.png'], [src$='/directory16.png'] {
   .icon-img('../node_modules/jenkins-core-theme/images/folder.svg', @color-grey);
 }
 
-.icon-folder-delete {
+.icon-clock, .icon-clock-anime, [src$='clock.png'] {
+  .icon-img('../node_modules/jenkins-core-theme/images/play_circle_outline.svg', @color-grey);
+}
+
+.icon-folder-delete, [src$='edit-delete.png'] {
   .icon-img('../node_modules/jenkins-core-theme/images/folder-remove.svg', @color-grey);
 }
 
@@ -221,26 +200,24 @@
   .icon-img('../node_modules/jenkins-core-theme/images/skip_next.svg', @color-grey);
 }
 
-.icon-save {
+.icon-save, [src$='/save.png'] {
   .icon-img('../node_modules/jenkins-core-theme/images/save.svg', @color-grey);
 }
 
 .icon-package, [src$='package.gif'] {
   .icon-img('../node_modules/jenkins-core-theme/images/package-down.svg', @color-grey);
-  &[width="24"] {
-    .icon(@size-md);
-  }
 }
 
 .icon-search, [src$='search.png'] {
   .icon-img('../node_modules/jenkins-core-theme/images/info_outline.svg', @color-grey);
-  &[width="24"] {
-    .icon(@size-md);
-  }
 }
 
 .icon-stop {
   .icon-img('../node_modules/jenkins-core-theme/images/stop.svg', @color-grey);
+}
+
+[src$='/move.png'] {
+  .icon-img('../node_modules/jenkins-core-theme/images/folder-move.svg', @color-grey);
 }
 
 [src$='/atom.gif'] {
@@ -251,35 +228,19 @@
 [src$='credentials.png'] {
   .icon(@size-xl);
   .icon-img('../node_modules/jenkins-core-theme/images/key.svg', @color-grey);
-  &[style^="width: 24px"], &[width="24"] {
-    .icon(@size-md);
-  }
 }
 
 [src$='notepad.png'] {
   .icon-img('../node_modules/jenkins-core-theme/images/history.svg', @color-grey);
-  &[width="24"] {
-    .icon(@size-md);
-  }
 }
 
 [src$='domain.png'] {
   .icon(@size-xl);
   .icon-img('../node_modules/jenkins-core-theme/images/domain.svg', @color-grey);
-  &[style^="width: 24px"] {
-    .icon(@size-md);
-  }
 }
 
 #description-link img, .icon-gear, [src$='gear.png'] {
   .icon-img('../node_modules/jenkins-core-theme/images/pencil.svg', @color-grey);
-  &[width="24"] {
-    .icon(@size-md);
-  }
-}
-
-[src$='24x24/terminal.png'] {
-  .icon(@size-md);
 }
 
 .icon-go-next {
@@ -287,44 +248,34 @@
 }
 
 [src$='diskusage48.png'] {
-  .icon(@size-md);
-  .icon-img('../node_modules/jenkins-core-theme/images/storage.svg', @color-grey);
-}
-
-h1 > [src$='diskusage48.png'] {
   .icon(@size-xl);
+  .icon-img('../node_modules/jenkins-core-theme/images/storage.svg', @color-grey);
 }
 
 [src$='git-32x32.png'] {
   .icon-img('../node_modules/jenkins-core-theme/images/git.svg', @color-grey);
-  .icon(@size-md);
+}
+
+[src$='logov3.png'] {
+  .icon-img('../node_modules/jenkins-core-theme/images/github-circle.svg', @color-grey);
 }
 
 /* Size */
 
-.icon-sm {
-  .icon(@size-sm);
-}
-
-.icon-md {
-  .icon(@size-md);
-}
-
-.icon-lg, .icon32x32 {
-  .icon(@size-lg);
-}
-
-.icon-xlg {
+.icon-xlg, [src*='48x48'], .icon48x48 {
   .icon(@size-xl);
 }
 
-/* build time trend overrides */
-#trend [src*='/images/16x16/'] {
-  .icon(@size-sm);
+.icon-lg, [src*='32x32'], .icon32x32, [style*='width: 32px'], [width="32"] {
+  .icon(@size-lg);
 }
 
-#configuration-matrix [src*='/images/24x24/'] {
+.icon-md, [src*='24x24'], .icon24x24, [style*='width: 24px'], [width="24"] {
   .icon(@size-md);
+}
+
+.icon-sm, [src*='16x16'], .icon16x16, [style*='width: 16px'], [width="16"] {
+  .icon(@size-sm);
 }
 
 .task-icon-link[href='/'] {
@@ -338,4 +289,10 @@ h1 > [src$='diskusage48.png'] {
   .icon-help {
     .icon-img('../node_modules/jenkins-core-theme/images/help_outline.svg', @color-white);
   }
+}
+
+[src*='www.gravatar.com'] {
+  height: auto !important;
+  width: auto !important;
+  padding: 0 !important;
 }
