@@ -1,5 +1,5 @@
 # jenkins-contrib-theme
-Base for Awesome Jenkins themes
+Base images and functions for Awesome Jenkins themes.
 
 ## Contrib Advices
 
@@ -7,8 +7,4 @@ Base for Awesome Jenkins themes
 * SVG images must have the fill color #333 that will be replaced according to the theme
  
 # How to Build
-
-```
-npm install
-grunt
-```
+This module should not be built. It's an NPM module that must be installed by real themes using ```npm install jenkins-core-theme```
