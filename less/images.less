@@ -1,11 +1,26 @@
 @import "functions";
 
+// Default Colors
+@color-primary: #26a69a;
+@color-bg: #fff;
+@color-text: #444;
+@color-link: #26a69a;
+@color-grey: #9E9E9E;
+@color-green: #009688;
+@color-yellow: #FFC107;
+@color-red: #F44336;
+@color-white: #fff;
+@color-black: #263238;
+@color-selection: #80CBC4;
+
+// Default Sizes
 @size-sm: 18px;
 @size-md: 24px;
 @size-lg: 36px;
 @size-xl: 48px;
 
-/* Src */
+// Src
+// Reminder: Each selector using `.icon-img` must be declared bellow using .icon-size too
 
 [src$='blue.png'] {
   .icon-img('../node_modules/jenkins-core-theme/images/check_circle.svg', @color-green);
@@ -59,49 +74,23 @@
   .icon-img('../node_modules/jenkins-core-theme/images/autorenew.svg', @color-yellow);
 }
 
-[src$='blue_anime.gif'],
-[src$='red_anime.gif'],
-[src$='grey_anime.gif'],
-[src$='yellow_anime.gif'],
-.icon-blue-anime,
-.icon-red-anime,
-.icon-grey-anime,
-.icon-yellow-anime,
-.icon-nobuilt-anime,
-.icon-aborted-anime {
-  .animate();
-}
-
-.icon-clock-anime {
-  .pulse()
-}
-
 .icon-new-package, [src$='new-package.png'] {
   .icon-img('../node_modules/jenkins-core-theme/images/add_circle_outline.svg', @color-grey);
-  &[width="24"] {
-    .icon(@size-md);
-  }
 }
 
 .icon-user, [src$='user.png'] {
   .icon-img('../node_modules/jenkins-core-theme/images/people.svg', @color-grey);
-  &[width="24"] {
-    .icon(@size-md);
-  }
 }
 
 .icon-notepad, [src$='notepad.png'] {
   .icon-img('../node_modules/jenkins-core-theme/images/history.svg', @color-grey);
 }
 
-.icon-setting, [src$='setting.png'] {
+.icon-setting, [src$='setting.png'], .icon-gear2, [src$='gear2.png'] {
   .icon-img('../node_modules/jenkins-core-theme/images/settings.svg', @color-grey);
-  &[width="24"] {
-    .icon(@size-md);
-  }
 }
 
-.icon-up {
+.icon-up, .task-icon-link[href='/'] img {
   .icon-img('../node_modules/jenkins-core-theme/images/arrow_back.svg', @color-grey);
 }
 
@@ -111,9 +100,6 @@
 
 .icon-fingerprint, [src$='fingerprint.png'] {
   .icon-img('../node_modules/jenkins-core-theme/images/fingerprint.svg', @color-grey);
-  &[width="24"] {
-    .icon(@size-md);
-  }
 }
 
 .icon-graph, [src$='graph.png'] {
@@ -260,39 +246,120 @@
   .icon-img('../node_modules/jenkins-core-theme/images/github-circle.svg', @color-grey);
 }
 
-/* Size */
+// Size
 
-.icon-xlg, [src*='48x48'], .icon48x48 {
-  .icon(@size-xl);
-}
+[src$='red.png'],
+[src$='blue.png'],
+[src$='yellow.png'],
+[src$='grey.png'], [src$='aborted.png'], [src$='nobuilt.png'], [src$='disabled.png'],
+.icon-health-80plus,
+.icon-health-60to79,
+.icon-health-40to59,
+.icon-health-20to39,
+.icon-health-00to19,
+.icon-blue-anime, [src$='blue_anime.gif'],
+.icon-red-anime, [src$='red_anime.gif'],
+.icon-grey-anime, [src$='grey_anime.gif'], .icon-nobuilt-anime, .icon-aborted-anime,
+.icon-yellow-anime, [src$='yellow_anime.gif'],
+.icon-new-package, [src$='new-package.png'],
+.icon-user, [src$='user.png'],
+.icon-notepad, [src$='notepad.png'],
+.icon-setting, [src$='setting.png'],
+.icon-up,
+.icon-edit-delete,
+.icon-fingerprint, [src$='fingerprint.png'],
+.icon-graph, [src$='graph.png'],
+.icon-collapse,
+.icon-expand,
+.icon-help, [src$='help.png'],
+.icon-secure, .icon-lock, [src$='secure.png'],
+.icon-plugin, [src$='plugin.png'],
+.icon-system-log-out, [src$='system-log-out.png'],
+.icon-refresh, [src$='refresh.png'],
+.icon-computer, [src$='computer.png'],
+.icon-computer-x,
+.icon-new-computer,
+.icon-clipboard, [src$='clipboard.png'],
+.icon-monitor, [src$='monitor.png'],
+.icon-terminal, [src$='terminal.png'],
+.icon-network, [src$='network.png'],
+.icon-document, .icon-text,
+.icon-folder, [src$='folder.png'], [src$='/directory16.png'],
+.icon-clock, .icon-clock-anime, [src$='clock.png'],
+.icon-folder-delete, [src$='edit-delete.png'],
+.icon-previous,
+.icon-next,
+.icon-save, [src$='/save.png'],
+.icon-package, [src$='package.gif'],
+.icon-search, [src$='search.png'],
+.icon-stop,
+[src$='/move.png'],
+[src$='/atom.gif'],
+[src$='credentials.png'],
+[src$='confighistory.png'],
+[src$='domain.png'],
+#description-link img, .icon-gear, [src$='gear.png'],
+.icon-go-next,
+[src$='diskusage48.png'],
+[src$='git-32x32.png'],
+[src$='logov3.png'] {
 
-.icon-lg, [src*='32x32'], .icon32x32, [style*='width: 32px'], [width="32"] {
-  .icon(@size-lg);
-}
+  &.icon-xlg, &[src*='48x'], &.icon48x48 {
+    .icon(@size-xl);
+  }
 
-.icon-md, [src*='24x24'], .icon24x24, [style*='width: 24px'], [width="24"] {
-  .icon(@size-md);
-}
+  &.icon-lg, &[src*='32x'], &.icon32x32, &[style*='width: 32p'], &[width="32"] {
+    .icon(@size-lg);
+  }
 
-.icon-sm, [src*='16x16'], .icon16x16, [style*='width: 16px'], [width="16"] {
-  .icon(@size-sm);
-}
+  &.icon-md, &[src*='24x'], &.icon24x24, &[style*='width: 24p'], &[width="24"] {
+    .icon(@size-md);
+  }
 
-.task-icon-link[href='/'] {
-  img {
-    padding: 36px 0 0 36px !important;
-    .icon-img('../node_modules/jenkins-core-theme/images/arrow_back.svg', @color-white);
+  &.icon-sm, &[src*='16x'], &.icon16x16, &[style*='width: 16p'], &[width="16"] {
+    .icon(@size-sm);
   }
 }
 
 #header {
   .icon-help {
-    .icon-img('../node_modules/jenkins-core-theme/images/help_outline.svg', @color-white);
+    filter: brightness(10000);
   }
 }
+
+// Animations
+
+.icon-clock-anime {
+  .animate-pulse()
+}
+
+[src$='blue_anime.gif'],
+[src$='red_anime.gif'],
+[src$='grey_anime.gif'],
+[src$='yellow_anime.gif'],
+.icon-blue-anime,
+.icon-red-anime,
+.icon-grey-anime,
+.icon-yellow-anime,
+.icon-nobuilt-anime,
+.icon-aborted-anime {
+  .animate-rotate();
+}
+
+// Hacks
 
 [src*='www.gravatar.com'] {
   height: auto !important;
   width: auto !important;
   padding: 0 !important;
 }
+
+.task-icon-link[href='/'] {
+  img {
+    padding: 36px 0 0 36px !important;
+    filter: brightness(10000);
+  }
+}
+
+
+
