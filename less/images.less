@@ -90,7 +90,7 @@
   .icon-img('../node_modules/jenkins-core-theme/images/settings.svg', @color-grey);
 }
 
-.icon-up, .task-icon-link[href='/'] img {
+.icon-up, [src$='up.png'] {
   .icon-img('../node_modules/jenkins-core-theme/images/arrow_back.svg', @color-grey);
 }
 
@@ -396,13 +396,3 @@
   width: auto !important;
   padding: 0 !important;
 }
-
-.task-icon-link[href='/'] {
-  img {
-    padding: 36px 0 0 36px !important;
-    filter: brightness(10000);
-  }
-}
-
-
-
