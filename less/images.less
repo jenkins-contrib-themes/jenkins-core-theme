@@ -118,7 +118,7 @@
   .icon-img('../node_modules/jenkins-core-theme/images/help_outline.svg', @color-grey);
 }
 
-.icon-secure, .icon-lock, [src$='secure.png'] {
+.icon-secure, .icon-lock, [src$='secure.png'], [src$='device-24x24.png'] {
   .icon-img('../node_modules/jenkins-core-theme/images/lock.svg', @color-grey);
 }
 
@@ -194,7 +194,7 @@
   .icon-img('../node_modules/jenkins-core-theme/images/package-down.svg', @color-grey);
 }
 
-.icon-search, [src$='search.png'] {
+.icon-search, [src$='search.png'], [src$='search.gif'] {
   .icon-img('../node_modules/jenkins-core-theme/images/search.svg', @color-grey) ;
 }
 
@@ -282,7 +282,16 @@
   .icon-img('../node_modules/jenkins-core-theme/images/blueocean.svg', @color-grey);
 }
 
+.icon-pipeline-multibranch-project, [src$='pipelinemultibranchproject.png'] {
+  .icon-img('../node_modules/jenkins-core-theme/images/folder-multiple.svg', @color-grey);
+}
+
 .icon-claim-claim, [src$='claim.png'] {
+  .icon-img('../node_modules/jenkins-core-theme/images/claim.svg', @color-grey);
+}
+
+[src$='claim-24x24.png'] {
+  .icon(@size-md);
   .icon-img('../node_modules/jenkins-core-theme/images/claim.svg', @color-grey);
 }
 
@@ -298,10 +307,17 @@
   .icon-img('../node_modules/jenkins-core-theme/images/backup.svg', @color-grey);
 }
 
+.task-icon-link [src$='cfg_logo.png'] {
+  .icon(@size-md);
+  .icon-img('../node_modules/jenkins-core-theme/images/config_file.svg', @color-grey);
+}
+
 [src$='cfg_logo.png'] {
   .icon(@size-xl);
   .icon-img('../node_modules/jenkins-core-theme/images/config_file.svg', @color-grey);
 }
+
+
 
 [src$='analysis-24x24.png'], [src$='analysis-48x48.png'],
 [src$='go-24x24.png'], [src$='go-48x48.png'],
@@ -340,7 +356,7 @@
 .icon-collapse,
 .icon-expand,
 .icon-help, [src$='help.png'],
-.icon-secure, .icon-lock, [src$='secure.png'],
+.icon-secure, .icon-lock, [src$='secure.png'], [src$='device-24x24.png'],
 .icon-plugin, [src$='plugin.png'],
 .icon-system-log-out, [src$='system-log-out.png'],
 .icon-refresh, [src$='refresh.png'],
@@ -359,11 +375,12 @@
 .icon-next,
 .icon-save, [src$='/save.png'],
 .icon-package, [src$='package.gif'],
-.icon-search, [src$='search.png'],
+.icon-search, [src$='search.png'], [src$='search.gif'],
 .icon-stop,
 .icon-docker, [src$='docker.png'],
 .icon-blueocean, [src$='blueocean.png'],
-.icon-claim-claim, [src$='claim.png'],
+.icon-pipeline-multibranch-project, [src$='pipelinemultibranchproject.png'],
+.icon-claim-claim, [src$='claim.png']
 .icon-workflow-stage.icon-md,
 .icon-redo,
 [src$='periodicbackup.png'],
