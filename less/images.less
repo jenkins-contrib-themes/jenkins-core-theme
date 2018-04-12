@@ -118,7 +118,7 @@
   .icon-img('../node_modules/jenkins-core-theme/images/help_outline.svg', @color-grey);
 }
 
-.icon-secure, .icon-lock, [src$='secure.png'] {
+.icon-secure, .icon-lock, [src$='secure.png'], [src$='device-24x24.png'] {
   .icon-img('../node_modules/jenkins-core-theme/images/lock.svg', @color-grey);
 }
 
@@ -162,7 +162,7 @@
   .icon-img('../node_modules/jenkins-core-theme/images/server-network.svg', @color-grey);
 }
 
-.icon-document, .icon-text {
+.icon-document, .icon-text, [src$='document.png'] {
   .icon-img('../node_modules/jenkins-core-theme/images/file.svg', @color-grey);
 }
 
@@ -194,8 +194,8 @@
   .icon-img('../node_modules/jenkins-core-theme/images/package-down.svg', @color-grey);
 }
 
-.icon-search, [src$='search.png'] {
-  .icon-img('../node_modules/jenkins-core-theme/images/info_outline.svg', @color-grey);
+.icon-search, [src$='search.png'], [src$='search.gif'] {
+  .icon-img('../node_modules/jenkins-core-theme/images/search.svg', @color-grey) ;
 }
 
 .icon-stop {
@@ -211,9 +211,17 @@
   .icon-img('../node_modules/jenkins-core-theme/images/rss-box.svg', @color-yellow);
 }
 
-[src$='credentials.png'] {
+[src$='credentials.png'], [src$='credential.png']  {
   .icon(@size-xl);
   .icon-img('../node_modules/jenkins-core-theme/images/key.svg', @color-grey);
+}
+
+[src$='new-credential.png'] {
+  .icon-img('../node_modules/jenkins-core-theme/images/key_plus.svg', @color-grey);
+}
+
+.icon-credentials-system-store {
+  .icon-img('../node_modules/jenkins-core-theme/images/credentials_store.svg', @color-grey);
 }
 
 [src$='confighistory.png'] {
@@ -266,12 +274,57 @@
   .icon-img('../node_modules/jenkins-core-theme/images/assignment_late.svg', @color-grey);
 }
 
-[src$='analysis-24x24.png'], [src$='analysis-48x48.png'], 
-[src$='go-24x24.png'], [src$='go-48x48.png'], 
-[src$='idea-24x24.png'], [src$='idea-48x48.png'], 
-[src$='java-24x24.png'], [src$='java-48x48.png'], 
-[src$='resharper-24x24.png'], [src$='resharper-48x48.png'], 
-[src$='scala-24x24.png'], [src$='scala-48x48.png'], 
+[src$='docker.png'] {
+  .icon-img('../node_modules/jenkins-core-theme/images/docker.svg', @color-grey);
+}
+
+[src$='blueocean.png'] {
+  .icon-img('../node_modules/jenkins-core-theme/images/blueocean.svg', @color-grey);
+}
+
+.icon-pipeline-multibranch-project, [src$='pipelinemultibranchproject.png'] {
+  .icon-img('../node_modules/jenkins-core-theme/images/folder-multiple.svg', @color-grey);
+}
+
+.icon-claim-claim, [src$='claim.png'] {
+  .icon-img('../node_modules/jenkins-core-theme/images/claim.svg', @color-grey);
+}
+
+[src$='claim-24x24.png'] {
+  .icon(@size-md);
+  .icon-img('../node_modules/jenkins-core-theme/images/claim.svg', @color-grey);
+}
+
+.icon-workflow-stage.icon-md {
+  .icon-img('../node_modules/jenkins-core-theme/images/search.svg', @color-grey) ;
+}
+
+.icon-redo  {
+  .icon-img('../node_modules/jenkins-core-theme/images/redo.svg', @color-grey);
+}
+
+[src$='periodicbackup.png'] {
+  .icon-img('../node_modules/jenkins-core-theme/images/backup.svg', @color-grey);
+}
+
+.task-icon-link [src$='cfg_logo.png'] {
+  .icon(@size-md);
+  .icon-img('../node_modules/jenkins-core-theme/images/config_file.svg', @color-grey);
+}
+
+[src$='cfg_logo.png'] {
+  .icon(@size-xl);
+  .icon-img('../node_modules/jenkins-core-theme/images/config_file.svg', @color-grey);
+}
+
+
+
+[src$='analysis-24x24.png'], [src$='analysis-48x48.png'],
+[src$='go-24x24.png'], [src$='go-48x48.png'],
+[src$='idea-24x24.png'], [src$='idea-48x48.png'],
+[src$='java-24x24.png'], [src$='java-48x48.png'],
+[src$='resharper-24x24.png'], [src$='resharper-48x48.png'],
+[src$='scala-24x24.png'], [src$='scala-48x48.png'],
 [src$='warnings-24x24.png'], [src$='warnings-48x48.png'] {
   .icon-img('../node_modules/jenkins-core-theme/images/warning.svg', @color-grey);
 }
@@ -303,7 +356,7 @@
 .icon-collapse,
 .icon-expand,
 .icon-help, [src$='help.png'],
-.icon-secure, .icon-lock, [src$='secure.png'],
+.icon-secure, .icon-lock, [src$='secure.png'], [src$='device-24x24.png'],
 .icon-plugin, [src$='plugin.png'],
 .icon-system-log-out, [src$='system-log-out.png'],
 .icon-refresh, [src$='refresh.png'],
@@ -314,7 +367,7 @@
 .icon-monitor, [src$='monitor.png'],
 .icon-terminal, [src$='terminal.png'],
 .icon-network, [src$='network.png'],
-.icon-document, .icon-text,
+.icon-document, .icon-text, [src$='document.png'],
 .icon-folder, [src$='folder.png'], [src$='/directory16.png'],
 .icon-clock, .icon-clock-anime, [src$='clock.png'],
 .icon-folder-delete, [src$='edit-delete.png'],
@@ -322,11 +375,20 @@
 .icon-next,
 .icon-save, [src$='/save.png'],
 .icon-package, [src$='package.gif'],
-.icon-search, [src$='search.png'],
+.icon-search, [src$='search.png'], [src$='search.gif'],
 .icon-stop,
+.icon-docker, [src$='docker.png'],
+.icon-blueocean, [src$='blueocean.png'],
+.icon-pipeline-multibranch-project, [src$='pipelinemultibranchproject.png'],
+.icon-claim-claim, [src$='claim.png']
+.icon-workflow-stage.icon-md,
+.icon-redo,
+[src$='periodicbackup.png'],
 [src$='/move.png'],
 [src$='/atom.gif'],
-[src$='credentials.png'],
+[src$='credentials.png'], [src$='credential.png'],
+[src$='new-credential.png'],
+.icon-credentials-system-store,
 [src$='confighistory.png'],
 [src$='domain.png'],
 #description-link img, .icon-gear, [src$='gear.png'],
@@ -403,6 +465,5 @@
     filter: brightness(10000);
   }
 }
-
 
 
