@@ -34,8 +34,12 @@
   .icon-img('../node_modules/jenkins-core-theme/images/warning.svg', @color-yellow);
 }
 
-[src$='grey.png'], [src$='aborted.png'], [src$='nobuilt.png'], [src$='disabled.png'] {
+[src$='grey.png'], [src$='aborted.png'], [src$='disabled.png'] {
   .icon-img('../node_modules/jenkins-core-theme/images/remove_circle.svg', @color-grey);
+}
+
+[src$='nobuilt.png'] {
+  .icon-img('../node_modules/jenkins-core-theme/images/trip_origin.svg', @color-grey);
 }
 
 .icon-health-80plus {
